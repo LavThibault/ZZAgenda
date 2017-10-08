@@ -1,5 +1,5 @@
 <header>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row justify-content-around">
       <div class="col-3">
         <h1>ZZAgenda</h1>
@@ -15,7 +15,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </div>
-      
+
     </div>
   </div>
 </header>
