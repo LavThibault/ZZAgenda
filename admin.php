@@ -12,21 +12,22 @@
     <!-- Header -->
     <?php include 'include/header.php' ?>
 
-    <div class="container mb-3 mt-3">
-      <div class="row justify-content-around">
+    <!--Page title-->
+    <div class="container mb-3 mt-3 ">
+      <div class="row justify-content-around" id="pageTitle">
 
-        <div class="border col-3">
+        <div class="text-center col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
           <h2>Administration</h2>
         </div>
 
-        <div class="col-3">
-          <a type="button" class="btn btn-primary col-12" href="#">Ajouter une conférence</a>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+          <a type="button" class="btn btn-primary col-12" href="ajoutConf.php">Ajouter une conférence</a>
         </div>
 
       </div>
     </div>
 
-
+    <!-- Table with events -->
     <div class="container">
       <table class="table table-striped">
         <thead>
