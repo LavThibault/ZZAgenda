@@ -1,3 +1,8 @@
+<?php
+  define('__ROOT__', dirname(__FILE__));
+  require_once(__ROOT__.'/functions/file.php');
+  require_once(__ROOT__.'/functions/json_parser.php');
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +26,7 @@
 
     <div class="container">
 
-  	     <form class="form-horizontal">
+  	     <form class="form-horizontal" method="post">
            <fieldset>
 
              <!-- Form Name -->
@@ -31,7 +36,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label" for="requestid">Titre</label>
                <div class="col-md-4">
-                 <input id="requestid" name="reqid" class="form-control input-md" required="" type="text">
+                 <input id="titre" name="titre" class="form-control input-md" required="" type="text">
                </div>
              </div>
 
@@ -39,7 +44,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label" for="requestid">Intervenant</label>
                <div class="col-md-4">
-                 <input id="requestid" name="reqid" class="form-control input-md" required="" type="text">
+                 <input id="interv" name="interv" class="form-control input-md" required="" type="text">
                </div>
              </div>
 
@@ -47,7 +52,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="dis">Description</label>
                 <div class="col-md-4">
-                  <textarea class="form-control" id="dis" name="dis"></textarea>
+                  <textarea class="form-control" id="desc" name="desc"></textarea>
                 </div>
               </div>
 
@@ -57,13 +62,33 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="submit"></label><center>
                 <div class="col-md-4">
-                  <button id="submit" name="submit" class="btn btn-primary">Ajouter</button>
+                  <button id="submit" name="submit" type="submit" class="btn btn-primary">Ajouter</button>
                 </div></center>
               </div>
 
             </fieldset>
           </form>
 
+          <?php
+
+          if(isset($_POST['submit'])){
+              extract($_POST);
+
+              $c = new Conf();
+              $c->titre = $titre;
+              $c->intervenant  = $interv;
+              $c->date_ajout = "10/12/2017";
+              $c->description = $desc;
+
+              $c_parsed = json_encode($c);
+
+              write(__ROOT__."/database/conf.json",$c_parsed);
+            }
+
+          /*  $c_parsed = read(__ROOT__."/database/conf.json");
+
+            echo var_dump(json_decode($c_parsed));*/
+           ?>
 
        </div>
 
