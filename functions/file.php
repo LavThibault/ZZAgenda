@@ -11,7 +11,7 @@ function read ($file_name) {
 }
 
 function write ($file_name, $values) {
-  $file = fopen($file_name, "a");
+  $file = fopen($file_name, "w");
   fwrite($file,$values);
   fclose($file);
 }

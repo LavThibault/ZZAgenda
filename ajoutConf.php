@@ -72,23 +72,10 @@
           <?php
 
           if(isset($_POST['submit'])){
-              extract($_POST);
+            saveConf();
+          }
 
-              $c = new Conf();
-              $c->titre = $titre;
-              $c->intervenant  = $interv;
-              $c->date_ajout = "10/12/2017";
-              $c->description = $desc;
-
-              $c_parsed = json_encode($c);
-
-              write(__ROOT__."/database/conf.json",$c_parsed);
-            }
-
-          /*  $c_parsed = read(__ROOT__."/database/conf.json");
-
-            echo var_dump(json_decode($c_parsed));*/
-           ?>
+          ?>
 
        </div>
 

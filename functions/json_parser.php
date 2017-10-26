@@ -5,12 +5,34 @@
       public $description = "";
    }
 
-  /* $c = new Conf();
-   $c->titre = "Pourquoi hacher un mot de passe n'est pas vegan ?";
-   $c->intervenant  = "Jacques Carniste";
-   $c->description = "blablbla";
+  function saveConf (){
+    $all_c_parsed = read(__ROOT__."/database/conf.json");
 
-   $c_parsed = json_encode($c);
+    $all_c = json_decode($all_c_parsed);
 
-   var_dump(json_decode($c_parsed));*/
+    echo var_dump($all_c);
+
+    $c_array = array();
+
+    if($all_c != NULL){
+      foreach ($all_c as $kay => $c) {
+        array_push($c_array,$c);
+        /*$newkey = $c->$titre;
+        $c_array[$newkey]=$c;*/
+      }
+    }
+
+    extract($_POST);
+
+    $c = new Conf();
+    $c->titre = $titre;
+    $c->intervenant  = $interv;
+    $c->description = $desc;
+
+    array_push($c_array,$c);
+
+    $c_array_parsed = json_encode($c_array);
+
+    write(__ROOT__."/database/conf.json",$c_array_parsed);
+  }
 ?>
