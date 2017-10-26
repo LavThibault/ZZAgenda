@@ -9,6 +9,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <title>ZZAgenda</title>
   </head>
@@ -57,7 +60,18 @@
               </div>
 
 
+
+              <!--Date picker-->
+              <!-- documentation : http://api.jqueryui.com/datepicker/#theming -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="date"></label>
+                  <div class="col-md-4">
+                    <div id="datepicker"></div>
+                  </div>
               </div>
+
+
+
               <!-- Button -->
               <div class="form-group">
                 <label class="col-md-4 control-label" for="submit"></label><center>
@@ -66,9 +80,13 @@
                 </div></center>
               </div>
 
+
+
+
+
             </fieldset>
           </form>
-
+            </div>
           <?php
 
           if(isset($_POST['submit'])){
@@ -81,5 +99,10 @@
 
     <!-- Footer -->
     <?php include 'include/footer.php' ?>
+
+    <script>
+$( "#datepicker" ).datepicker();
+</script>
+
   </body>
 </html>

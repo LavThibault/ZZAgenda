@@ -29,7 +29,8 @@
     $c->intervenant  = $interv;
     $c->description = $desc;
 
-    array_push($c_array,$c);
+    //array_push($c_array,$c);
+    $c_array[$c->titre]=$c;
 
     $c_array_parsed = json_encode($c_array);
 
