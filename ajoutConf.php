@@ -64,9 +64,9 @@
               <!--Date picker-->
               <!-- documentation : http://api.jqueryui.com/datepicker/#theming -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="date"></label>
+                <label class="col-md-4 control-label" for="submit">Selectionner une date</label>
                   <div class="col-md-4">
-                    <div id="datepicker"></div>
+                    <input id="date" type="text" name="date" readonly></input>
                   </div>
               </div>
 
@@ -101,7 +101,7 @@
     <?php include 'include/footer.php' ?>
 
     <script>
-$( "#datepicker" ).datepicker();
+$( "#date" ).datepicker();
 </script>
 
   </body>
