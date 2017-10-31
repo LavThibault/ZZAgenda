@@ -1,36 +1,33 @@
+<?php
+  define('__ROOT__', dirname(__FILE__));
+  require_once(__ROOT__.'/functions/file.php');
+  require_once(__ROOT__.'/functions/json_parser.php');
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://use.fontawesome.com/ef7e0d3fcd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <title>ZZAgenda</title>
   </head>
   <body>
 
     <!-- Header -->
-    <?php include 'include/header.php' ?>
-
-    <!-- Event Element -->
-    <div class="container">
-      <div class="row">
-        <div >
-          <p>Logo</p>
-        </div>
-        <div >
-          <p>10:00</p>
-        </div>
-        <div class="col-5 border-left">
-          <p>Paragraphe présentant l'évènement. Par exemple, bonjour ici michel va nous parler des avantages à blablabla</p>
-        </div>
-      </div>
-    </div>
-    <!-- /Event Element -->
+    <?php include 'include/header.php';
 
 
-    <!-- Footer -->
-    <?php include 'include/footer.php' ?>
+
+
+    printConf();
+
+
+
+
+    include 'include/footer.php'; ?>
 
 
 

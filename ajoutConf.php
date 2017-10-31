@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/i18n/jquery-ui-i18n.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <title>ZZAgenda</title>
   </head>
@@ -39,7 +40,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label" for="requestid">Titre</label>
                <div class="col-md-4">
-                 <input id="titre" name="titre" class="form-control input-md" required="" type="text">
+                 <input id="titre" name="titre" class="form-control input-md" required type="text">
                </div>
              </div>
 
@@ -47,29 +48,80 @@
              <div class="form-group">
                <label class="col-md-4 control-label" for="requestid">Intervenant</label>
                <div class="col-md-4">
-                 <input id="interv" name="interv" class="form-control input-md" required="" type="text">
+                 <input id="interv" name="interv" class="form-control input-md" required type="text">
                </div>
              </div>
 
               <!-- Textarea -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="dis">Description</label>
+                <label class="col-md-4 control-label" for="submit">Description</label>
                 <div class="col-md-4">
-                  <textarea class="form-control" id="desc" name="desc"></textarea>
+                  <textarea class="form-control" id="desc" name="desc" required></textarea>
                 </div>
               </div>
 
-
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="requestid">Lieu</label>
+                <div class="col-md-4">
+                  <input id="lieu" name="lieu" class="form-control input-md" required type="text">
+                </div>
+              </div>
 
               <!--Date picker-->
               <!-- documentation : http://api.jqueryui.com/datepicker/#theming -->
               <div class="form-group">
                 <label class="col-md-4 control-label" for="submit">Selectionner une date</label>
                   <div class="col-md-4">
-                    <input id="date" type="text" name="date" readonly></input>
+                    <input id="date" type="text" name="date" required></input>
                   </div>
               </div>
 
+              <!-- Textarea -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="dis">Heure</label>
+                <div class="col-md-4 row">
+                  <select id="heures" name="heures" class="form-control col-md-3">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                  </select>
+
+                  <select id="minutes" name="minutes" class="form-control col-md-3">
+                    <option value="0">00</option>
+                    <option value="5">05</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                  </select>
+                </div>
+              </div>
 
 
               <!-- Button -->
@@ -80,17 +132,19 @@
                 </div></center>
               </div>
 
-
-
-
-
             </fieldset>
           </form>
             </div>
           <?php
 
           if(isset($_POST['submit'])){
-            saveConf();
+            if(checkdate(substr($_POST['date'], 3, 2),substr($_POST['date'], 0, 2),substr($_POST['date'], 6, 4))){
+              saveConf();
+            } else {
+              ?>
+              <script>alert("Entrer une date valide");</script>
+              <?php
+            }
           }
 
           ?>
@@ -101,7 +155,9 @@
     <?php include 'include/footer.php' ?>
 
     <script>
-$( "#date" ).datepicker();
+      $(function() {
+          $( "#date" ).datepicker($.datepicker.regional["fr"]);
+        });
 </script>
 
   </body>
