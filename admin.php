@@ -1,16 +1,24 @@
+<?php
+  define('__ROOT__', dirname(__FILE__));
+  require_once(__ROOT__.'/functions/file.php');
+  require_once(__ROOT__.'/functions/json_parser.php');
+  require_once(__ROOT__.'/functions/conf_manager.php');
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://use.fontawesome.com/ef7e0d3fcd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <title>ZZAgenda</title>
   </head>
   <body>
 
     <!-- Header -->
-    <?php include 'include/header.php' ?>
+    <?php include  __ROOT__.'/include/header.php' ?>
 
     <!--Page title-->
     <div class="container mb-3 mt-3 ">
@@ -35,27 +43,21 @@
             <th>Nom</th>
             <th>Intervenant</th>
             <th>Date</th>
+            <th>Lieu</th>
             <th>Modifier/Supprimer</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Conférence cybersécurité</td>
-            <td>Hervé Firewall</td>
-            <td>Lundi 16 octobre</td>
-            <td>Modif.    Supp.</td>
-          </tr>
-          <tr>
-            <td>Conférence BDD</td>
-            <td>Percy Stance</td>
-            <td>Mercredi 18 octobre</td>
-            <td>Modif.    Supp.</td>
-          </tr>
+          <?php
+
+            print_all_conference_admin();
+
+           ?>
         </tbody>
       </table>
     </div>
 
     <!-- Footer -->
-    <?php include 'include/footer.php' ?>
+    <?php include  __ROOT__.'/include/footer.php' ?>
   </body>
 </html>

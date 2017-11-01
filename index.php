@@ -2,6 +2,7 @@
   define('__ROOT__', dirname(__FILE__));
   require_once(__ROOT__.'/functions/file.php');
   require_once(__ROOT__.'/functions/json_parser.php');
+  require_once(__ROOT__.'/functions/conf_manager.php');
  ?>
 
 <!DOCTYPE html>
@@ -17,17 +18,17 @@
   <body>
 
     <!-- Header -->
-    <?php include 'include/header.php';
+    <?php include __ROOT__.'/include/header.php';
 
 
 
 
-    printConf();
+    print_all_conference();
 
 
 
 
-    include 'include/footer.php'; ?>
+    include __ROOT__.'/include/footer.php'; ?>
 
 
 

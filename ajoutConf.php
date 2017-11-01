@@ -2,6 +2,7 @@
   define('__ROOT__', dirname(__FILE__));
   require_once(__ROOT__.'/functions/file.php');
   require_once(__ROOT__.'/functions/json_parser.php');
+  require_once(__ROOT__.'/functions/conf_manager.php');
  ?>
 <!DOCTYPE html>
 <html>
@@ -81,15 +82,16 @@
                 <label class="col-md-4 control-label" for="dis">Heure</label>
                 <div class="col-md-4 row">
                   <select id="heures" name="heures" class="form-control col-md-3">
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                    <option value="4">04</option>
-                    <option value="5">05</option>
-                    <option value="6">06</option>
-                    <option value="7">07</option>
-                    <option value="8">08</option>
-                    <option value="9">09</option>
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
                     <option value="10">10</option>
                     <option value="11">11</option>
                     <option value="12">12</option>
@@ -107,8 +109,8 @@
                   </select>
 
                   <select id="minutes" name="minutes" class="form-control col-md-3">
-                    <option value="0">00</option>
-                    <option value="5">05</option>
+                    <option value="00">00</option>
+                    <option value="05">05</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
@@ -139,10 +141,14 @@
 
           if(isset($_POST['submit'])){
             if(checkdate(substr($_POST['date'], 3, 2),substr($_POST['date'], 0, 2),substr($_POST['date'], 6, 4))){
-              saveConf();
+
+              add_conference();
+
             } else {
               ?>
+
               <script>alert("Entrer une date valide");</script>
+
               <?php
             }
           }
