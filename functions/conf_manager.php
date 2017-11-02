@@ -41,7 +41,7 @@
      $c_array = get_conference();
 
      foreach ($c_array as $key => $c) {
-       print_conference_admin($c);
+       print_conference_admin($c, $key);
      }
 
    }
@@ -110,7 +110,7 @@
      return $previous_date;
    }
 
-   function print_conference_admin($c){
+   function print_conference_admin($c, $key){
      echo"<tr>
             <td>";
               echo $c->titre;
@@ -127,7 +127,7 @@
        <td>
           <div class=\"row\">
             <div class=\"col-4\">
-              <i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"window.location.href='index.php'\" style=\"cursor:pointer;\"></i>
+              <i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"modify_conference()\" style=\"cursor:pointer;\"></i>
             </div>
             <div class=\"col-4\">
               <i class=\"fa fa-times\" aria-hidden=\"true\"></i>

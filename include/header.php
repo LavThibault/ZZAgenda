@@ -6,9 +6,9 @@
       </div>
 
       <div>
-        <select id="issuetype" name="issuetype" class="form-control" onChange="window.location.href=this.value">
-          <option value="#">Français</option>
-          <option value="#">Anglais</option>
+        <select id="language" name="language" class="form-control" onChange="window.location.href=this.value">
+          <option value="?lang=fr">Français</option>
+          <option value="?lang=en">English</option>
         </select>
       </div>
 

@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <title>ZZAgenda - Connexion</title>
-  </head>
-  <body>
-
-    <!-- Header -->
-    <?php include 'include/header.php' ?>
-
+<?php
+if (empty($_GET['page'])) {
+   header("HTTP/1.0 400 Bad Request", true, 400);
+   exit('400: Bad Request');
+ }
+?>
     <!-- Connexion page -->
 
     <div class="container">
@@ -55,9 +47,3 @@
 
 
     <!-- /Connexion page -->
-
-    <!-- Footer -->
-    <?php include 'include/footer.php' ?>
-
-  </body>
-</html>

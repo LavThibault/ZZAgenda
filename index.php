@@ -11,6 +11,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src= "js/scripts.js" ?>></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/i18n/jquery-ui-i18n.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://use.fontawesome.com/ef7e0d3fcd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <title>ZZAgenda</title>
@@ -18,19 +24,30 @@
   <body>
 
     <!-- Header -->
-    <?php include __ROOT__.'/include/header.php';
+    <?php include  __ROOT__.'/include/header.php' ?>
 
+    <?php
 
+          extract($_GET);
 
+          $pages = array('admin', 'ajoutConf', 'connexion');
 
-    print_all_conference();
+        	if (!empty($page)) {
+            if(in_array($page,$pages)) {
+        			$page = 'pages/'.$page.'.php';
+        		} else {
+              $page = 'pages/error/404.php';
+        		}
+          } else {
+        		$page='pages/default.php';
+        	}
 
+          include($page);
 
+    ?>
 
-
-    include __ROOT__.'/include/footer.php'; ?>
-
-
+    <!-- Footer -->
+    <?php include  __ROOT__.'/include/footer.php' ?>
 
   </body>
 </html>

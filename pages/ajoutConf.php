@@ -1,30 +1,13 @@
 <?php
-  define('__ROOT__', dirname(__FILE__));
-  require_once(__ROOT__.'/functions/file.php');
-  require_once(__ROOT__.'/functions/json_parser.php');
-  require_once(__ROOT__.'/functions/conf_manager.php');
- ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/i18n/jquery-ui-i18n.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <title>ZZAgenda</title>
-  </head>
-  <body>
-
-    <!-- Header -->
-    <?php include 'include/header.php' ?>
+if (empty($_GET['page'])) {
+   header("HTTP/1.0 400 Bad Request", true, 400);
+   exit('400: Bad Request');
+ }
+?>
 
     <div class="container">
       <div class="row" id="pageTitle">
-        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="admin.php">Retour</a>
+        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="?page=admin">Retour</a>
 
       </div>
     </div>
@@ -157,14 +140,8 @@
 
        </div>
 
-    <!-- Footer -->
-    <?php include 'include/footer.php' ?>
-
     <script>
       $(function() {
           $( "#date" ).datepicker($.datepicker.regional["fr"]);
         });
 </script>
-
-  </body>
-</html>
