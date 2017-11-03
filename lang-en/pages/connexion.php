@@ -1,7 +1,7 @@
 <?php
 if (empty($_GET['page'])) {
-   header("HTTP/1.0 400 Bad Request", true, 400);
-   exit('400: Bad Request');
+   header( "Location: http://localhost/www/ZZAgenda/en" );
+   exit();
  }
 ?>
     <!-- Connexion page -->
@@ -25,7 +25,7 @@ if (empty($_GET['page'])) {
 
           <!-- Password input-->
           <div class="form-group">
-            <label class="col-12 control-label" for="">Mot de passe</label>
+            <label class="col-12 control-label" for="">Password</label>
             <div class="col-12">
               <input id="" name="" type="password" placeholder="" class="form-control input">
 

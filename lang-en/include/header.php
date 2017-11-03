@@ -7,8 +7,8 @@
 
       <div>
         <select id="language" name="language" class="form-control" onChange="window.location.href=this.value">
-          <option value="?lang=fr">Français</option>
-          <option value="?lang=en">English</option>
+          <option value="/www/ZZAgenda/en">English</option>
+          <option value="/www/ZZAgenda/">French</option>
         </select>
       </div>
 

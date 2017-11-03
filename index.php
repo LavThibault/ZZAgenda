@@ -3,15 +3,17 @@
   require_once(__ROOT__.'/functions/file.php');
   require_once(__ROOT__.'/functions/json_parser.php');
   require_once(__ROOT__.'/functions/conf_manager.php');
+  extract($_GET);
+  $lang="lang-".$lang;
  ?>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script src= "js/scripts.js" ?>></script>
+    <link rel="stylesheet" href="/www/ZZAgenda/css/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/www/ZZAgenda/css/style.css" type="text/css">
+    <script src= "/www/ZZAgenda/js/scripts.js" ?>></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
@@ -24,22 +26,26 @@
   <body>
 
     <!-- Header -->
-    <?php include  __ROOT__.'/include/header.php' ?>
+    <?php include  __ROOT__.'/'.$lang.'/include/header.php' ?>
 
     <?php
 
-          extract($_GET);
-
           $pages = array('admin', 'ajoutConf', 'connexion');
 
-        	if (!empty($page)) {
+/*        if(isset($lang)){
+            echo $lang;
+          } else {
+            echo "non";
+          }*/
+
+          if (!empty($page)) {
             if(in_array($page,$pages)) {
-        			$page = 'pages/'.$page.'.php';
+        			$page = $lang."/pages/".$page.'.php';
         		} else {
-              $page = 'pages/error/404.php';
+              $page = $lang.'/pages/error/404.php';
         		}
           } else {
-        		$page='pages/default.php';
+        		$page=$lang."/pages/default.php";
         	}
 
           include($page);
@@ -47,7 +53,7 @@
     ?>
 
     <!-- Footer -->
-    <?php include  __ROOT__.'/include/footer.php' ?>
+    <?php include  __ROOT__.'/'.$lang.'/include/footer.php' ?>
 
   </body>
 </html>
