@@ -1,3 +1,3 @@
-function modify_conference(){
-  alert("Worked")
+function modify_conference(key){
+  window.location = '/www/ZZAgenda/fr/modifier_conference/' + key
 }

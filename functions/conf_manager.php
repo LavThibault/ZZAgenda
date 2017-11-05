@@ -10,7 +10,7 @@
 
 
    function add_conference(){
-     $c_array = get_conference();
+     $c_array = get_conferences();
 
      $nb_c = count($c_array);
      $nb_c = str_pad($nb_c, 3, '0', STR_PAD_LEFT);
@@ -22,13 +22,35 @@
 
      $c_array[$key]=$c;
 
-     ksort($c_array);
+     set_conference($c_array);
+   }
+
+   function get_conference($key){
+     $c_array = get_conferences();
+
+     return $c_array[$key];
+   }
+
+   function update_conference($oldkey){
+     $c = create_new_conference();
+
+     $nb_c = count($c_array);
+     $nb_c = str_pad($nb_c, 3, '0', STR_PAD_LEFT);
+
+     extract($_POST);
+     $newkey = substr($date, 6, 4).substr($date, 3, 2).substr($date, 0, 2).$heures.$minutes.$nb_c;
+
+     $c_array=get_conferences();
+
+     unset($c_array[$oldkey]);
+
+     $c_array[$newkey]=$c;
 
      set_conference($c_array);
    }
 
    function print_all_conference(){
-     $c_array = get_conference();
+     $c_array = get_conferences();
      $date="";
 
        foreach ($c_array as $key => $c) {
@@ -38,7 +60,7 @@
    }
 
    function print_all_conference_admin(){
-     $c_array = get_conference();
+     $c_array = get_conferences();
 
      foreach ($c_array as $key => $c) {
        print_conference_admin($c, $key);
@@ -127,7 +149,7 @@
        <td>
           <div class=\"row\">
             <div class=\"col-4\">
-              <i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"modify_conference()\" style=\"cursor:pointer;\"></i>
+              <i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"modify_conference("; echo $key; echo")\" style=\"cursor:pointer;\"></i>
             </div>
             <div class=\"col-4\">
               <i class=\"fa fa-times\" aria-hidden=\"true\"></i>

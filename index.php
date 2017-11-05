@@ -31,13 +31,7 @@
 
     <?php
 
-          $pages = array('admin', 'ajoutConf', 'connexion');
-
-/*        if(isset($lang)){
-            echo $lang;
-          } else {
-            echo "non";
-          }*/
+          $pages = array('admin', 'ajoutConf', 'connexion', 'modifierConf');
 
           if (!empty($page)) {
             if(in_array($page,$pages)) {
@@ -54,7 +48,8 @@
     ?>
 
     <!-- Footer -->
-    <?php include  __ROOT__.'/'.$lang.'/include/footer.php' ?>
-
+    <?php
+      include  __ROOT__.'/'.$lang.'/include/footer.php'
+    ?>
   </body>
 </html>
