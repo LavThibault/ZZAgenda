@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <title>ZZAgenda - Connexion</title>
-  </head>
-  <body>
-
-    <!-- Header -->
-    <?php include 'include/header.php' ?>
-
+<?php
+if (empty($_GET['page'])) {
+   header( "Location: http://localhost/www/ZZAgenda/en" );
+   exit();
+ }
+?>
     <!-- Connexion page -->
 
     <div class="container">
@@ -33,7 +25,7 @@
 
           <!-- Password input-->
           <div class="form-group">
-            <label class="col-12 control-label" for="">Mot de passe</label>
+            <label class="col-12 control-label" for="">Password</label>
             <div class="col-12">
               <input id="" name="" type="password" placeholder="" class="form-control input">
 
@@ -55,9 +47,3 @@
 
 
     <!-- /Connexion page -->
-
-    <!-- Footer -->
-    <?php include 'include/footer.php' ?>
-
-  </body>
-</html>
