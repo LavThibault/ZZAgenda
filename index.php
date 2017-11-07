@@ -1,38 +1,57 @@
+<?php
+  define('__ROOT__', dirname(__FILE__));
+  require_once(__ROOT__.'/functions/file.php');
+  require_once(__ROOT__.'/functions/json_parser.php');
+  require_once(__ROOT__.'/functions/conf_manager.php');
+  require_once(__ROOT__.'/functions/functions.php');
+  require_once(__ROOT__.'/test.php');
+  
+  extract($_GET);
+  $lang="lang-".$lang;
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="/www/ZZAgenda/css/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/www/ZZAgenda/css/style.css" type="text/css">
+    <script src= "/www/ZZAgenda/js/scripts.js" ?>></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/i18n/jquery-ui-i18n.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://use.fontawesome.com/ef7e0d3fcd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <title>ZZAgenda</title>
   </head>
   <body>
 
     <!-- Header -->
-    <?php include 'include/header.php' ?>
+    <?php include  __ROOT__.'/'.$lang.'/include/header.php' ?>
 
-    <!-- Event Element -->
-    <div class="container">
-      <div class="row">
-        <div >
-          <p>Logo</p>
-        </div>
-        <div >
-          <p>10:00</p>
-        </div>
-        <div class="col-5 border-left">
-          <p>Paragraphe présentant l'évènement. Par exemple, bonjour ici michel va nous parler des avantages à blablabla</p>
-        </div>
-      </div>
-    </div>
-    <!-- /Event Element -->
+    <?php
 
+          $pages = array('admin', 'ajoutConf', 'connexion', 'modifierConf');
+
+          if (!empty($page)) {
+            if(in_array($page,$pages)) {
+        			$page = $lang."/pages/".$page.'.php';
+        		} else {
+              $page = $lang.'/pages/error/404.php';
+        		}
+          } else {
+        		$page=$lang."/pages/default.php";
+        	}
+
+          include($page);
+
+    ?>
 
     <!-- Footer -->
-    <?php include 'include/footer.php' ?>
-
-
-
+    <?php
+      include  __ROOT__.'/'.$lang.'/include/footer.php'
+    ?>
   </body>
 </html>
