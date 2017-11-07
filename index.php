@@ -4,6 +4,8 @@
   require_once(__ROOT__.'/functions/json_parser.php');
   require_once(__ROOT__.'/functions/conf_manager.php');
   require_once(__ROOT__.'/functions/functions.php');
+  require_once(__ROOT__.'/test.php');
+  
   extract($_GET);
   $lang="lang-".$lang;
  ?>

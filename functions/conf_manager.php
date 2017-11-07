@@ -34,13 +34,13 @@
    function update_conference($oldkey){
      $c = create_new_conference();
 
+     $c_array=get_conferences();
+
      $nb_c = count($c_array);
      $nb_c = str_pad($nb_c, 3, '0', STR_PAD_LEFT);
 
      extract($_POST);
      $newkey = substr($date, 6, 4).substr($date, 3, 2).substr($date, 0, 2).$heures.$minutes.$nb_c;
-
-     $c_array=get_conferences();
 
      unset($c_array[$oldkey]);
 
