@@ -1,15 +1,13 @@
 RewriteEngine On
 
-DirectoryIndex index.php?lang=fr
+RewriteRule ^en?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=en
+RewriteRule ^en/add_conference?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=en&page=ajoutConf
+RewriteRule ^en/connection?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=en&page=connexion
+RewriteRule ^en/administrator?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=en&page=admin
+RewriteRule ^en/modify_conference?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=en&page=modifierConf
 
-RewriteRule ^en?$ index.php?lang=en
-RewriteRule ^en/add_conference?$ index.php?lang=en&page=ajoutConf
-RewriteRule ^en/connection?$ index.php?lang=en&page=connexion
-RewriteRule ^en/administrator?$ index.php?lang=en&page=admin
-RewriteRule ^en/modify_conference?$ index.php?lang=en&page=modifierConf
-
-RewriteRule ^fr?$ index.php?lang=fr
-RewriteRule ^fr/ajouter_conference?$ index.php?lang=fr&page=ajoutConf
-RewriteRule ^fr/connexion?$ index.php?lang=fr&page=connexion
-RewriteRule ^fr/administrateur?$ index.php?lang=fr&page=admin
-RewriteRule ^fr/modifier_conference/([0-9]+)?$ index.php?lang=fr&page=modifierConf&conf=$1
+RewriteRule ^fr?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=fr
+RewriteRule ^fr/ajouter_conference?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=fr&page=ajoutConf
+RewriteRule ^fr/connexion?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=fr&page=connexion
+RewriteRule ^fr/administrateur?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=fr&page=admin
+RewriteRule ^fr/modifier_conference/([0-9]+)?$ http://ws.isima.fr/~thlavigne1/ZZAgenda/index.php?lang=fr&page=modifierConf&conf=$1

@@ -1,11 +1,11 @@
 <?php
   define('__ROOT__', dirname(__FILE__));
+
   require_once(__ROOT__.'/functions/file.php');
   require_once(__ROOT__.'/functions/json_parser.php');
   require_once(__ROOT__.'/functions/conf_manager.php');
   require_once(__ROOT__.'/functions/functions.php');
-  require_once(__ROOT__.'/test.php');
-  
+
   extract($_GET);
   $lang="lang-".$lang;
  ?>
@@ -14,9 +14,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/www/ZZAgenda/css/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/www/ZZAgenda/css/style.css" type="text/css">
-    <script src= "/www/ZZAgenda/js/scripts.js" ?>></script>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src= "js/scripts.js" ?>></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
@@ -29,7 +29,9 @@
   <body>
 
     <!-- Header -->
-    <?php include  __ROOT__.'/'.$lang.'/include/header.php' ?>
+    <?php include  __ROOT__.'/'.$lang.'/include/header.php'  ?>
+
+
 
     <?php
 

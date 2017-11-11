@@ -24,8 +24,8 @@
 
       <div>
         <select id="language" name="language" class="form-control" onChange="window.location.href=this.value">
-          <option value="/www/ZZAgenda/fr/">Français</option>
-          <option value="/www/ZZAgenda/en<?php echo $actual_page ?>">Anglais</option>
+          <option value="/~thlavigne1/ZZAgenda/fr/">Français</option>
+          <option value="/~thlavigne1/ZZAgenda/en<?php echo $actual_page ?>">Anglais</option>
         </select>
       </div>
 
