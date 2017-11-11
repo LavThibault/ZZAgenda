@@ -8,9 +8,8 @@ if (empty($_GET['page'])) {
 
     <div class="container">
       <div class="row justify-content-center">
-        <form class="form-horizontal col-5">
+        <form class="form-horizontal col-5" action="connexion.php" method="post">
           <fieldset>
-
           <!-- Form Name -->
           <legend>Connexion</legend>
 
@@ -18,7 +17,7 @@ if (empty($_GET['page'])) {
           <div class="form-group">
             <label class="col-12 control-label" for="">Nom</label>
             <div class="col-12">
-            <input id="" name="" type="text" placeholder="" class="form-control input">
+            <input id="" name="username" type="text" placeholder="" class="form-control input">
 
             </div>
           </div>
@@ -27,15 +26,19 @@ if (empty($_GET['page'])) {
           <div class="form-group">
             <label class="col-12 control-label" for="">Mot de passe</label>
             <div class="col-12">
-              <input id="" name="" type="password" placeholder="" class="form-control input">
+              <input id="" name="password" type="password" placeholder="" class="form-control input">
 
             </div>
           </div>
 
+          <?php
+            authentification();
+           ?>
+
           <!-- Button (Double) -->
           <div class="form-group">
             <div class="col-md-8">
-              <button id="" name="" class="btn btn-primary">Se connecter</button>
+              <button id="" name="" class="btn btn-primary" type=submit>Se connecter</button>
               <button id="" name="" class="btn btn-secondary">Annuler</button>
             </div>
           </div>
