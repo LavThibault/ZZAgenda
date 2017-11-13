@@ -1,0 +1,5 @@
+<?php
+
+$SUCCESS = 'It works';
+
+ ?>

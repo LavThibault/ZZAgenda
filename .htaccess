@@ -1,4 +1,4 @@
-RewriteEngine On
+RewriteEngine Off
 
 RewriteRule ^en?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=en
 RewriteRule ^en/add_conference?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=en&page=ajoutConf
@@ -6,7 +6,7 @@ RewriteRule ^en/connection?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/inde
 RewriteRule ^en/administrator?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=en&page=admin
 RewriteRule ^en/modify_conference?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=en&page=modifierConf
 
-RewriteRule ^fr?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=fr
+RewriteRule ^fr?$ http://%{HTTP_HOST}/ZZAgenda/index.php?lang=fr
 RewriteRule ^fr/ajouter_conference?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=fr&page=ajoutConf
 RewriteRule ^fr/connexion?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=fr&page=connexion
 RewriteRule ^fr/administrateur?$ http://ws.isima.fr/~gefrancois/projet/ZZAgenda/index.php?lang=fr&page=admin

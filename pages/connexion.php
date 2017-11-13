@@ -1,6 +1,6 @@
 <?php
 if (empty($_GET['page'])) {
-   header( "Location: http://localhost/www/ZZAgenda/" );
+   header( "Location: $url" );
    exit();
  }
 ?>
@@ -8,7 +8,7 @@ if (empty($_GET['page'])) {
 
     <div class="container">
       <div class="row justify-content-center">
-        <form class="form-horizontal col-5" action="connexion.php" method="post">
+        <form class="form-horizontal col-5" method="post">
           <fieldset>
           <!-- Form Name -->
           <legend>Connexion</legend>

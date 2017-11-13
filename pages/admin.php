@@ -1,6 +1,6 @@
 <?php
 if (empty($_GET['page'])) {
-   header( "Location: http://localhost/www/ZZAgenda/" );
+   header( "Location: $url" );
    exit();
  }
 ?>
@@ -13,7 +13,7 @@ if (empty($_GET['page'])) {
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-          <a type="button" class="btn btn-primary col-12" href="/www/ZZAgenda/fr/ajouter_conference">Ajouter une conférence</a>
+          <a type="button" class="btn btn-primary col-12" href="<?php echo $url ?>/fr/ajouter_conference">Ajouter une conférence</a>
         </div>
 
       </div>

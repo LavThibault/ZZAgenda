@@ -7,9 +7,7 @@
 
       <?php
 
-        $str = $_SERVER["REQUEST_URI"];
-
-        if(preg_match_all('/\/([fr,en]+)\/([a-z,A-Z,_]*)/',$str,$m)){
+    /*  if(preg_match_all('/\/([fr,en]+)\/([a-z,A-Z,_]*)/',$str,$m)){
 
         $actual_lang = ($m[1][0]);
         $actual_page = ($m[2][0]);
@@ -19,13 +17,14 @@
       } else {
         $actual_page = '';
       }
-
+*/
+      echo $url;
        ?>
 
       <div>
         <select id="language" name="language" class="form-control" onChange="window.location.href=this.value">
-          <option value="/~thlavigne1/ZZAgenda/fr/">Français</option>
-          <option value="/~thlavigne1/ZZAgenda/en<?php echo $actual_page ?>">Anglais</option>
+          <option value="<?php echo $url ?>/fr">Français</option>
+          <option value="<?php echo $url ?>/en">Anglais</option>
         </select>
       </div>
 
