@@ -1,13 +1,13 @@
 <?php
 if (empty($_GET['page'])) {
-   header( "Location: http://localhost/www/ZZAgenda/en" );
+   header( "Location: $url" );
    exit();
  }
 ?>
 
     <div class="container">
       <div class="row" id="pageTitle">
-        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="/www/ZZAgenda/en/administrator">Back</a>
+        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="<?php echo $url ?>/fr/administrateur">Retour</a>
 
       </div>
     </div>
@@ -18,11 +18,11 @@ if (empty($_GET['page'])) {
            <fieldset>
 
              <!-- Form Name -->
-             <legend><center>Add a new conference</center></legend>
+             <legend><center>Ajouter une conférence</center></legend>
 
              <!-- Text input-->
              <div class="form-group">
-               <label class="col-md-4 control-label" for="requestid">Title</label>
+               <label class="col-md-4 control-label" for="requestid">Titre</label>
                <div class="col-md-4">
                  <input id="titre" name="titre" class="form-control input-md" required type="text">
                </div>
@@ -30,7 +30,7 @@ if (empty($_GET['page'])) {
 
              <!-- Text input-->
              <div class="form-group">
-               <label class="col-md-4 control-label" for="requestid">Speaker</label>
+               <label class="col-md-4 control-label" for="requestid">Intervenant</label>
                <div class="col-md-4">
                  <input id="interv" name="interv" class="form-control input-md" required type="text">
                </div>
@@ -45,7 +45,7 @@ if (empty($_GET['page'])) {
               </div>
 
               <div class="form-group">
-                <label class="col-md-4 control-label" for="requestid">City</label>
+                <label class="col-md-4 control-label" for="requestid">Lieu</label>
                 <div class="col-md-4">
                   <input id="lieu" name="lieu" class="form-control input-md" required type="text">
                 </div>
@@ -54,7 +54,7 @@ if (empty($_GET['page'])) {
               <!--Date picker-->
               <!-- documentation : http://api.jqueryui.com/datepicker/#theming -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="submit">Pick a date</label>
+                <label class="col-md-4 control-label" for="submit">Selectionner une date</label>
                   <div class="col-md-4">
                     <input id="date" type="text" name="date" required></input>
                   </div>
@@ -62,7 +62,7 @@ if (empty($_GET['page'])) {
 
               <!-- Textarea -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="dis">Time</label>
+                <label class="col-md-4 control-label" for="dis">Heure</label>
                 <div class="col-md-4 row">
                   <select id="heures" name="heures" class="form-control col-md-3">
                     <option value="00">00</option>
@@ -113,7 +113,7 @@ if (empty($_GET['page'])) {
               <div class="form-group">
                 <label class="col-md-4 control-label" for="submit"></label><center>
                 <div class="col-md-4">
-                  <button id="submit" name="submit" type="submit" class="btn btn-primary">Add</button>
+                  <button id="submit" name="submit" type="submit" class="btn btn-primary">Ajouter</button>
                 </div></center>
               </div>
 
@@ -130,7 +130,7 @@ if (empty($_GET['page'])) {
             } else {
               ?>
 
-              <script>alert("Please enter a valid date");</script>
+              <script>alert("Entrer une date valide");</script>
 
               <?php
             }
@@ -142,6 +142,6 @@ if (empty($_GET['page'])) {
 
     <script>
       $(function() {
-          $( "#date" ).datepicker($.datepicker.regional["en"]);
+          $( "#date" ).datepicker($.datepicker.regional["fr"]);
         });
 </script>

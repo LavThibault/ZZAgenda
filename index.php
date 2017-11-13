@@ -1,19 +1,36 @@
 <?php
   define('__ROOT__', dirname(__FILE__));
+  $full_url = $_SERVER["REQUEST_URI"];
+
+
+
+  $list = explode("/", $full_url);
+  $i=1;
+  $url = '/';
+
+
+  while($list[$i] != "ZZAgenda"){
+    $url .= $list[$i].'/';
+    $i += 1 ;
+  }
+  $url .= 'ZZAgenda';
+
 
   require_once(__ROOT__.'/functions/file.php');
   require_once(__ROOT__.'/functions/json_parser.php');
   require_once(__ROOT__.'/functions/conf_manager.php');
   require_once(__ROOT__.'/functions/functions.php');
-  require_once(__ROOT__.'/functions/auth.php')
+  require_once(__ROOT__.'/functions/auth.php');
 
   extract($_GET);
 
-  if(isset($lang)){
-    $lang="lang-".$lang;
+  if($lang == 'fr'){
+    require_once(__ROOT__.'/functions/fr_FR.php');
   } else {
-    $lang="lang-fr";
+    require_once(__ROOT__.'/functions/en_EN.php');
   }
+
+
 
  ?>
 
@@ -36,22 +53,24 @@
   <body>
 
     <!-- Header -->
-    <?php include  __ROOT__.'/'.$lang.'/include/header.php'  ?>
+    <?php include  __ROOT__.'/include/header.php'  ?>
 
 
 
     <?php
 
+      echo $SUCCESS;
+
           $pages = array('admin', 'ajoutConf', 'connexion', 'modifierConf');
 
           if (!empty($page)) {
             if(in_array($page,$pages)) {
-        			$page = $lang."/pages/".$page.'.php';
+        			$page = "pages/".$page.'.php';
         		} else {
-              $page = $lang.'/pages/error/404.php';
+              $page = 'pages/error/404.php';
         		}
           } else {
-        		$page=$lang."/pages/default.php";
+        		$page= "pages/default.php";
         	}
 
           include($page);
@@ -60,7 +79,7 @@
 
     <!-- Footer -->
     <?php
-      include  __ROOT__.'/'.$lang.'/include/footer.php'
+      include  __ROOT__.'/include/footer.php'
     ?>
   </body>
 </html>
