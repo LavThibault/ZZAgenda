@@ -7,7 +7,7 @@ if (empty($_GET['page'])) {
 
     <div class="container">
       <div class="row" id="pageTitle">
-        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="<?php echo $url ?>/fr/administrateur">Retour</a>
+        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="<?php echo $url ?>/<?php echo $lang ?>/<?php echo get_page('admin',$lang) ?>"><?php echo $RETOUR ?></a>
 
       </div>
     </div>
@@ -18,11 +18,11 @@ if (empty($_GET['page'])) {
            <fieldset>
 
              <!-- Form Name -->
-             <legend><center>Ajouter une conférence</center></legend>
+             <legend><center><?php echo $AJOUTER_UNE_CONFERENCE ?></center></legend>
 
              <!-- Text input-->
              <div class="form-group">
-               <label class="col-md-4 control-label" for="requestid">Titre</label>
+               <label class="col-md-4 control-label" for="requestid"><?php echo $TITRE ?></label>
                <div class="col-md-4">
                  <input id="titre" name="titre" class="form-control input-md" required type="text">
                </div>
@@ -30,7 +30,7 @@ if (empty($_GET['page'])) {
 
              <!-- Text input-->
              <div class="form-group">
-               <label class="col-md-4 control-label" for="requestid">Intervenant</label>
+               <label class="col-md-4 control-label" for="requestid"><?php echo $INTERVENANT ?></label>
                <div class="col-md-4">
                  <input id="interv" name="interv" class="form-control input-md" required type="text">
                </div>
@@ -38,14 +38,14 @@ if (empty($_GET['page'])) {
 
               <!-- Textarea -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="submit">Description</label>
+                <label class="col-md-4 control-label" for="submit"><?php echo $DESCRIPTION ?></label>
                 <div class="col-md-4">
                   <textarea class="form-control" id="desc" name="desc" required></textarea>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-md-4 control-label" for="requestid">Lieu</label>
+                <label class="col-md-4 control-label" for="requestid"><?php echo $LIEU ?></label>
                 <div class="col-md-4">
                   <input id="lieu" name="lieu" class="form-control input-md" required type="text">
                 </div>
@@ -54,7 +54,7 @@ if (empty($_GET['page'])) {
               <!--Date picker-->
               <!-- documentation : http://api.jqueryui.com/datepicker/#theming -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="submit">Selectionner une date</label>
+                <label class="col-md-4 control-label" for="submit"><?php echo $SELECTIONNER_UNE_DATE ?></label>
                   <div class="col-md-4">
                     <input id="date" type="text" name="date" required></input>
                   </div>
@@ -62,7 +62,7 @@ if (empty($_GET['page'])) {
 
               <!-- Textarea -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="dis">Heure</label>
+                <label class="col-md-4 control-label" for="dis"><? echo $HEURE ?></label>
                 <div class="col-md-4 row">
                   <select id="heures" name="heures" class="form-control col-md-3">
                     <option value="00">00</option>
@@ -113,7 +113,7 @@ if (empty($_GET['page'])) {
               <div class="form-group">
                 <label class="col-md-4 control-label" for="submit"></label><center>
                 <div class="col-md-4">
-                  <button id="submit" name="submit" type="submit" class="btn btn-primary">Ajouter</button>
+                  <button id="submit" name="submit" type="submit" class="btn btn-primary"><?php echo $AJOUTER ?></button>
                 </div></center>
               </div>
 
