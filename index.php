@@ -22,13 +22,18 @@
   require_once(__ROOT__.'/functions/functions.php');
   require_once(__ROOT__.'/functions/auth.php');
 
-  extract($_GET);
 
-  if($lang == 'fr'){
-    require_once(__ROOT__.'/functions/fr_FR.php');
-  } else {
-    require_once(__ROOT__.'/functions/en_EN.php');
+
+    extract($_GET);
+
+    if(isset($lang)){
+    if($lang == 'fr'){
+      require_once(__ROOT__.'/functions/fr_FR.php');
+    } else {
+      require_once(__ROOT__.'/functions/en_EN.php');
+    }
   }
+
 
 
 
@@ -38,9 +43,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script src= "js/scripts.js"></script>
+    <link rel="stylesheet" href="<?php echo $url ?>/css/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url ?>/css/style.css" type="text/css">
+    <script src= "<?php echo $url ?>/js/scripts.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
@@ -58,8 +63,6 @@
 
 
     <?php
-
-      echo $SUCCESS;
 
           $pages = array('admin', 'ajoutConf', 'connexion', 'modifierConf');
 
