@@ -21,6 +21,7 @@
   require_once(__ROOT__.'/functions/conf_manager.php');
   require_once(__ROOT__.'/functions/functions.php');
   require_once(__ROOT__.'/functions/auth.php');
+  require_once(__ROOT__.'/functions/csv_parser.php');
 
 
 
@@ -34,6 +35,7 @@
     }
   }
 
+  chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
 
 
 
