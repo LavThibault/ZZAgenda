@@ -1,4 +1,11 @@
 <?php
+
+  session_start();
+
+  if(!isset($_SESSION['level'])){
+    $_SESSION['level'] = 0;
+  }
+
   define('__ROOT__', dirname(__FILE__));
   $full_url = $_SERVER["REQUEST_URI"];
 
@@ -25,14 +32,18 @@
 
 
 
-    extract($_GET);
+  extract($_GET);
 
-    if(isset($lang)){
+  if(isset($lang)){
     if($lang == 'fr'){
       require_once(__ROOT__.'/functions/fr_FR.php');
     } else {
       require_once(__ROOT__.'/functions/en_EN.php');
     }
+  }
+  else{
+    //$lang = 'fr';
+    //require_once(__ROOT__.'/functions/fr_FR.php');
   }
 
   chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
@@ -60,22 +71,43 @@
   <body>
 
     <!-- Header -->
-    <?php include  __ROOT__.'/include/header.php'  ?>
+    <?php include  __ROOT__.'/include/header.php';
+
+    ?>
 
 
 
     <?php
 
-          $pages = array('admin', 'ajoutConf', 'connexion', 'modifierConf');
+          $unknown = array('connexion');
+          $user = array('connexion', 'default', 'deconnexion');
+          $admin = array('admin', 'ajoutConf', 'connexion', 'modifierConf', 'default', 'deconnexion');
+          $pages = array('admin', 'ajoutConf', 'connexion', 'modifierConf', 'default', 'deconnexion');
 
           if (!empty($page)) {
             if(in_array($page,$pages)) {
-        			$page = "pages/".$page.'.php';
+              if($_SESSION['level'] == 0 && in_array($page, $unknown)){
+                $page = "pages/".$page.".php";
+              }
+              elseif ($_SESSION['level'] == 1 && in_array($page, $user)) {
+                $page = "pages/".$page.".php";
+              }
+              elseif($_SESSION['level'] == 2 && in_array($page, $admin)){
+                $page = "pages/".$page.'.php';
+              }
+              else{
+                $page = 'pages/error/401.php'; //Unauthorized
+              }
         		} else {
               $page = 'pages/error/404.php';
         		}
           } else {
-        		$page= "pages/default.php";
+            if(isset($_SESSION['level']) && $_SESSION['level'] > 0){
+              $page = "pages/default.php";
+            }
+            else{
+              $page= "pages/connexion.php";
+            }
         	}
 
           include($page);

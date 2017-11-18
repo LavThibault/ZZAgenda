@@ -6,9 +6,13 @@ RewriteRule ^en/add_conference?$ index.php?lang=en&page=ajoutConf
 RewriteRule ^en/connection?$ index.php?lang=en&page=connexion
 RewriteRule ^en/administrator?$ index.php?lang=en&page=admin
 RewriteRule ^en/modify_conference?$ index.php?lang=en&page=modifierConf
+RewriteRule ^en/conferences?$ index.php?lang=en&page=default
+RewriteRule ^en/disconnection?$ index.php?lang=en&page=deconnexion
 
 RewriteRule ^fr?$ index.php?lang=fr
 RewriteRule ^fr/ajouter_conference?$ index.php?lang=fr&page=ajoutConf
 RewriteRule ^fr/connexion?$ index.php?lang=fr&page=connexion
 RewriteRule ^fr/administrateur?$ index.php?lang=fr&page=admin
 RewriteRule ^fr/modifier_conference/([0-9]+)?$ index.php?lang=fr&page=modifierConf&conf=$1
+RewriteRule ^fr/conferences?$ index.php?lang=fr&page=default
+RewriteRule ^fr/deconnexion?$ index.php?lang=fr&page=deconnexion

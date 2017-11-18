@@ -10,8 +10,7 @@ function authentification(){
             $connexion = true;
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['level'] = $userDataBase[$i][2];
-            echo "Connexion réussie.";
-            //header('Location: index.php');
+            header('Location: conferences');
           }
           $i++;
         }

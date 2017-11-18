@@ -9,7 +9,7 @@ if (empty($_GET['page'])) {
       <div class="row justify-content-around" id="pageTitle">
 
         <div class="text-center col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-          <h2><?php echo $ADMINISATRATION ?></h2>
+          <h2><?php echo $ADMINISTRATION ?></h2>
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
