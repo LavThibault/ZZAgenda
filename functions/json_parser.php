@@ -6,7 +6,6 @@
     $all_c = json_decode($all_c_parsed);
 
     $c_array = array();
-    $i=0;
 
     if($all_c != NULL){
       foreach ($all_c as $key => $c) {

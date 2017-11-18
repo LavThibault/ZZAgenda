@@ -1,22 +1,38 @@
 <?php
 
 function authentification(){
-    $connexion = false;
     if (isset($_POST['username']) && isset($_POST['password']) && ($filep = fopen(__ROOT__."/database/password.csv", "r")) !== FALSE) {
-      while (!$connexion && ($user = fgetcsv($filep, 1000, ";")) !== FALSE) {
-        if($user[0] == $_POST['username'] && $user[1] == $_POST['password']){
-          $connexion = true;
-          $_SESSION['username'] = $_POST['username'];
-          $_SESSION['password'] = $_POST['password'];
-          $_SESSION['level'] = $user[2];
-          echo "Connexion réussie.";
-          //header('Location: index.php');
+        $connexion = false;
+        $i = 1;
+        $userDataBase = get_users();
+        while (!$connexion && $i < count($userDataBase)) {
+          if($userDataBase[$i][0] == $_POST['username'] && $userDataBase[$i][1] == hash('sha256', $_POST['password'])){
+            $connexion = true;
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['level'] = $userDataBase[$i][2];
+            echo "Connexion réussie.";
+            //header('Location: index.php');
+          }
+          $i++;
         }
-      }
-      fclose($filep);
-      if(!$connexion){
-        echo "Utilisateur ou mot de passe introuvable.";
-      }
+        fclose($filep);
+        if(!$connexion){
+          echo "Utilisateur ou mot de passe introuvable.";
+        }
     }
   }
+
+  function chiffrementDatabase(){
+    $filep = fopen(__ROOT__."/database/password.csv", "r+");
+    $lectureFichier = get_users();
+    for($i = 0; $i < count($lectureFichier); $i++){
+      if($i != 0 && $lectureFichier[$i][3] == 0){
+        $lectureFichier[$i][1] = hash('sha256', $lectureFichier[$i][1]);
+        $lectureFichier[$i][3] = 1;
+      }
+    }
+    set_users($lectureFichier);
+    fclose($filep);
+  }
+
  ?>
