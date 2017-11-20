@@ -1,6 +1,7 @@
 <?php
 
 function authentification(){
+    global $url;
     if (isset($_POST['username']) && isset($_POST['password']) && ($filep = fopen(__ROOT__."/database/password.csv", "r")) !== FALSE) {
         $connexion = false;
         $i = 1;
@@ -10,8 +11,7 @@ function authentification(){
             $connexion = true;
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['level'] = $userDataBase[$i][2];
-            echo "Connexion réussie.";
-            //header('Location: index.php');
+            header("Location: $url/fr/conferences");
           }
           $i++;
         }

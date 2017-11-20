@@ -1,4 +1,10 @@
 <?php
+  session_start();
+
+  if(!isset($_SESSION['level'])){
+    $_SESSION['level'] = 0;
+  }
+
   define('__ROOT__', dirname(__FILE__));
   $full_url = $_SERVER["REQUEST_URI"];
 
@@ -25,14 +31,19 @@
 
 
 
-    extract($_GET);
+  extract($_GET);
+  extract($_SESSION);
 
-    if(isset($lang)){
+  if(isset($lang)){
     if($lang == 'fr'){
       require_once(__ROOT__.'/functions/fr_FR.php');
     } else {
       require_once(__ROOT__.'/functions/en_EN.php');
     }
+  }
+  else{
+    $lang = 'fr';
+    require_once(__ROOT__.'/functions/fr_FR.php');
   }
 
   chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
@@ -60,23 +71,40 @@
   <body>
 
     <!-- Header -->
-    <?php include  __ROOT__.'/include/header.php'  ?>
+    <?php include  __ROOT__.'/include/header.php';
+
+    ?>
 
 
 
     <?php
 
-          $pages = array('admin', 'ajoutConf', 'connexion', 'modifierConf');
+          $unknown = array('connexion');
+          $user = array('connexion', 'conferences', 'deconnexion');
+          $admin = array('admin', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion');
 
-          if (!empty($page)) {
-            if(in_array($page,$pages)) {
-        			$page = "pages/".$page.'.php';
+
+          if (empty($page)) {
+            if(!$level){
+              $page = "pages/connexion.php";
+            } else {
+              $page = "pages/conferences.php";
+            }
+          } else {
+            if(in_array($page,$admin)) {
+              if($_SESSION['level'] == 0 && in_array($page, $unknown)){
+                $page = 'pages/'.$page.'.php';
+              } else if ($_SESSION['level'] == 1 && in_array($page, $user)) {
+                $page = 'pages/'.$page.'.php';
+              } else if($_SESSION['level'] == 2){
+                $page = 'pages/'.$page.'.php';
+              } else{
+                $page = 'pages/error/401.php'; //Unauthorized
+              }
         		} else {
               $page = 'pages/error/404.php';
         		}
-          } else {
-        		$page= "pages/default.php";
-        	}
+          }
 
           include($page);
 

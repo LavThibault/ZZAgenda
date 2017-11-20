@@ -1,12 +1,15 @@
 <?php
 
 $CONNEXION = 'Sign in';
+$DECONNEXION = 'Sign out';
 $LIEN_CONNEXION = 'connection';
+$LIEN_DECONNEXION = 'disconnection';
+$LIENADMIN = 'administrator';
 $ACCUEIL = 'Home';
 $CARTE = 'Map';
 $FRANCAIS = 'French';
 $ANGLAIS = 'English';
-$ADMINISATRATION = 'Administration';
+$ADMINISTRATION = 'Administration';
 $AJOUTER_UNE_CONFERENCE = 'Add a new conference';
 $AJOUTER = 'Add';
 $TITRE = 'Title';
