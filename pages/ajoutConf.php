@@ -1,9 +1,9 @@
 <?php
-if (empty($_GET['page'])) {
-   header( "Location: $url" );
-   exit();
- }
-?>
+  if($level < 2){
+    header("Location: /ZZAgenda/index.php");
+    exit();
+  }
+ ?>
 
     <div class="container">
       <div class="row" id="pageTitle">

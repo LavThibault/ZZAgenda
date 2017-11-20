@@ -1,8 +1,11 @@
 <?php
-if (empty($_GET['page'])) {
-   header( "Location: http://localhost/www/ZZAgenda/" );
-   exit();
- }
+  if($level < 2){
+    header("Location: /ZZAgenda/index.php");
+    exit();
+  }
+ ?>
+
+<?php
 
  extract($_GET);
 

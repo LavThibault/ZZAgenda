@@ -1,14 +1,9 @@
-<?php
-if (empty($_GET['page'])) {
-   header( "Location: $url" );
-   exit();
- }
-?>
+
     <!-- Connexion page -->
 
     <div class="container">
       <div class="row justify-content-center">
-        <form class="form-horizontal col-5" method="post">
+        <form class="form-horizontal col-5" method="post" >
           <fieldset>
           <!-- Form Name -->
           <legend><?php echo $CONNEXION ?></legend>
@@ -31,17 +26,20 @@ if (empty($_GET['page'])) {
             </div>
           </div>
 
-          <?php
-            authentification();
-           ?>
 
           <!-- Button (Double) -->
           <div class="form-group">
             <div class="col-md-8">
-              <button id="" name="" class="btn btn-primary" type=submit><?php echo $CONNEXION ?></button>
-              <button id="" name="" class="btn btn-secondary"><?php echo $ANNULER ?></button>
+              <button id="submit" name="submit" class="btn btn-primary" type=submit><?php echo $CONNEXION ?></button>
             </div>
           </div>
+
+          <?php
+              if(isset($_POST['submit'])){
+                authentification();
+              }
+           ?>
+
 
           </fieldset>
         </form>
