@@ -34,29 +34,17 @@
   extract($_GET);
   extract($_SESSION);
 
-<<<<<<< HEAD
-  if(isset($lang)){
-    if($lang == 'fr'){
-      require_once(__ROOT__.'/functions/fr_FR.php');
-=======
+
     if(isset($lang)){
       if($lang == 'fr'){
         require_once(__ROOT__.'/functions/fr_FR.php');
       } else {
         require_once(__ROOT__.'/functions/en_EN.php');
       }
->>>>>>> styleSketchy
-    } else {
+    } else{
+      $lang = 'fr';
       require_once(__ROOT__.'/functions/fr_FR.php');
     }
-<<<<<<< HEAD
-  }
-  else{
-    $lang = 'fr';
-    require_once(__ROOT__.'/functions/fr_FR.php');
-  }
-=======
->>>>>>> styleSketchy
 
   chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
 

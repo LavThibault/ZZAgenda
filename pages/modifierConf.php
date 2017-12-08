@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
   if($level < 2){
     header("Location: /ZZAgenda/index.php");
     exit();
@@ -7,12 +6,6 @@
  ?>
 
 <?php
-=======
-if (empty($_GET['page'])) {
-   header( "Location: $url" );
-   exit();
- }
->>>>>>> styleSketchy
 
  extract($_GET);
 
@@ -21,11 +14,8 @@ if (empty($_GET['page'])) {
 
     <div class="container">
       <div class="row" id="pageTitle">
-<<<<<<< HEAD
-        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="<?php echo $url.'/'.$lang.'/'.$LIENADMIN ?>"><?php echo $RETOUR ?></a>
-=======
+
         <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="<?php echo $url ?>/index.php?lang=<?php echo $lang ?>&page=admin"><?php echo $RETOUR ?></a>
->>>>>>> styleSketchy
 
       </div>
     </div>
