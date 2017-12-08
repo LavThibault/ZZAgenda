@@ -1,13 +1,6 @@
 <?php
 
 $CONNEXION = 'Sign in';
-<<<<<<< HEAD
-$DECONNEXION = 'Sign out';
-$LIEN_CONNEXION = 'connection';
-$LIEN_DECONNEXION = 'disconnection';
-$LIENADMIN = 'administrator';
-=======
->>>>>>> styleSketchy
 $ACCUEIL = 'Home';
 $CARTE = 'Map';
 $FRANCAIS = 'French';
