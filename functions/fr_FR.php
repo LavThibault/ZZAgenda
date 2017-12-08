@@ -1,13 +1,13 @@
 <?php
 
 $CONNEXION = 'Connexion';
-$LIEN_CONNEXION = 'connexion';
 $ACCUEIL = 'Accueil';
 $CARTE = 'Carte';
 $FRANCAIS = 'Français';
 $ANGLAIS = 'Anglais';
 $ADMINISATRATION = 'Administration';
 $AJOUTER_UNE_CONFERENCE = 'Ajouter une conférence';
+$AJOUTER = 'Ajouter';
 $TITRE = 'Titre';
 $INTERVENANT = 'Intervenant';
 $DATE = 'Date';

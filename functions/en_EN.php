@@ -1,7 +1,6 @@
 <?php
 
 $CONNEXION = 'Sign in';
-$LIEN_CONNEXION = 'connection';
 $ACCUEIL = 'Home';
 $CARTE = 'Map';
 $FRANCAIS = 'French';

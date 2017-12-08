@@ -7,7 +7,7 @@ if (empty($_GET['page'])) {
 
     <div class="container">
       <div class="row" id="pageTitle">
-        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="<?php echo $url ?>/<?php echo $lang ?>/<?php echo get_page('admin',$lang) ?>"><?php echo $RETOUR ?></a>
+        <a type="button" class="btn btn-primary col-1 mb-3 mt-3" href="<?php echo $url ?>/index.php?lang=<?php echo $lang ?>&page=admin"><?php echo $RETOUR ?></a>
 
       </div>
     </div>
