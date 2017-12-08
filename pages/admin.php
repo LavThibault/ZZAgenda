@@ -14,7 +14,7 @@
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-          <a type="button" class="btn btn-primary col-12" href="<?php echo $url ?>/<?php echo $lang ?>/<?php echo get_page('ajoutConf',$lang) ?>"><?php echo $AJOUTER_UNE_CONFERENCE ?></a>
+          <a type="button" class="btn btn-primary col-12" href="<?php echo $url ?>/index.php?lang=<?php echo $lang ?>&page=ajoutConf"><?php echo $AJOUTER_UNE_CONFERENCE ?></a>
         </div>
 
       </div>

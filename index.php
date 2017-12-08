@@ -34,17 +34,29 @@
   extract($_GET);
   extract($_SESSION);
 
+<<<<<<< HEAD
   if(isset($lang)){
     if($lang == 'fr'){
       require_once(__ROOT__.'/functions/fr_FR.php');
+=======
+    if(isset($lang)){
+      if($lang == 'fr'){
+        require_once(__ROOT__.'/functions/fr_FR.php');
+      } else {
+        require_once(__ROOT__.'/functions/en_EN.php');
+      }
+>>>>>>> styleSketchy
     } else {
-      require_once(__ROOT__.'/functions/en_EN.php');
+      require_once(__ROOT__.'/functions/fr_FR.php');
     }
+<<<<<<< HEAD
   }
   else{
     $lang = 'fr';
     require_once(__ROOT__.'/functions/fr_FR.php');
   }
+=======
+>>>>>>> styleSketchy
 
   chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
 
@@ -57,6 +69,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo $url ?>/css/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url ?>/css/sketchy.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url ?>/css/style.css" type="text/css">
     <script src= "<?php echo $url ?>/js/scripts.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
