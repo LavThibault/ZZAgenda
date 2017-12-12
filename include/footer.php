@@ -9,10 +9,10 @@
   function buttonConnexion(){
     global $url, $lang, $LIEN_CONNEXION, $LIEN_DECONNEXION, $CONNEXION, $DECONNEXION;
     if(isConnected()){
-      echo '<a type="button" class="btn btn-primary col-3" href="'.$url.'/'.$lang.'/'.$LIEN_DECONNEXION.'">'.$DECONNEXION.'</a>';
+      echo '<a type="button" class="btn btn-primary col-3" href="'.$url.'/index.php?lang='.$lang.'&page='.$LIEN_DECONNEXION.'">'.$DECONNEXION.'</a>';
     }
     else{
-      echo '<a type="button" class="btn btn-primary col-3" href="'.$url.'/'.$lang.'/'.$LIEN_CONNEXION.'">'.$CONNEXION.'</a>';
+      echo '<a type="button" class="btn btn-primary col-3" href="'.$url.'/index.php?lang='.$lang.'&page='.$LIEN_CONNEXION.'">'.$CONNEXION.'</a>';
     }
   }
  ?>

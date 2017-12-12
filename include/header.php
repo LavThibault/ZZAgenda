@@ -26,13 +26,13 @@
             <?php
                 if($lang == "en"){
             ?>
-              <option value="<?php echo $url ?>/index.php?lang=en"><?php echo $ANGLAIS ?></option>
-              <option value="<?php echo $url ?>/index.php?lang=fr"><?php echo $FRANCAIS ?></option>
+              <option value="<?php echo $url ?>/index.php?lang=en<?php if(isset($page)){ echo "&page=".$page;} ?>"><?php echo $ANGLAIS ?></option>
+              <option value="<?php echo $url ?>/index.php?lang=fr<?php if(isset($page)){ echo "&page=".$page;} ?>"><?php echo $FRANCAIS ?></option>
             <?php
                 } else {
             ?>
-              <option value="<?php echo $url ?>/index.php?lang=fr"><?php echo $FRANCAIS ?></option>
-              <option value="<?php echo $url ?>/index.php?lang=en"><?php echo $ANGLAIS ?></option>
+              <option value="<?php echo $url ?>/index.php?lang=fr<?php if(isset($page)){ echo "&page=".$page;} ?>"><?php echo $FRANCAIS ?></option>
+              <option value="<?php echo $url ?>/index.php?lang=en<?php if(isset($page)){ echo "&page=".$page;} ?>"><?php echo $ANGLAIS ?></option>
             <?php
                 }
             ?>
