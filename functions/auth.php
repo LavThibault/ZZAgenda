@@ -11,7 +11,7 @@ function authentification(){
             $connexion = true;
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['level'] = $userDataBase[$i][2];
-            header("Location: $url/fr/conferences");
+            header("Location: $url/index.php?lang=fr&page=conferences");
           }
           $i++;
         }

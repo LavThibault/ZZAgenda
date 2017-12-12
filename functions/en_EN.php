@@ -1,5 +1,9 @@
 <?php
 
+$DECONNEXION = 'Sign out';
+-$LIEN_CONNEXION = 'connection';
+$LIEN_DECONNEXION = 'disconnection';
+$LIENADMIN = 'administrator';
 $CONNEXION = 'Sign in';
 $ACCUEIL = 'Home';
 $CARTE = 'Map';
