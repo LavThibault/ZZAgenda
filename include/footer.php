@@ -38,9 +38,8 @@
   <div class="container-fluid">
     <div class="row justify-content-around">
       <?php accueilButton() ?>
-      <a type="button" class="btn btn-primary col-3"><?php echo $CARTE ?></a>
-      <?php buttonConnexion() ?>
       <?php adminButton() ?>
+      <?php buttonConnexion() ?>
 
     </div>
   </div>
