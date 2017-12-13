@@ -1,9 +1,7 @@
 <?php
 
 $DECONNEXION = 'Deconnexion';
-$LIEN_CONNEXION = 'connexion';
-$LIEN_DECONNEXION = 'deconnexion';
-$LIENADMIN = 'administrateur';
+$ADMINISTRATION = 'Administration';
 $CONNEXION = 'Connexion';
 $ACCUEIL = 'Accueil';
 $CARTE = 'Carte';
