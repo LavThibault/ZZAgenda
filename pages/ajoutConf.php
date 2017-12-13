@@ -126,6 +126,11 @@
             if(checkdate(substr($_POST['date'], 3, 2),substr($_POST['date'], 0, 2),substr($_POST['date'], 6, 4))){
 
               add_conference();
+              ?>
+                <script type="text/javascript">
+                  load_page("<?php echo $url ?>/index.php?lang=<?php echo $lang ?>&page=admin");
+                </script>
+              <?php
 
             } else {
               ?>

@@ -1,8 +1,8 @@
 <?php
 
 $DECONNEXION = 'Sign out';
--$LIEN_CONNEXION = 'connection';
-$LIEN_DECONNEXION = 'disconnection';
+$LIEN_CONNEXION = 'connexion';
+$LIEN_DECONNEXION = 'connexion';
 $LIENADMIN = 'administrator';
 $CONNEXION = 'Sign in';
 $ACCUEIL = 'Home';
