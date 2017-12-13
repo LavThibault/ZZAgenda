@@ -15,6 +15,7 @@ function authentification(){
           }
           $i++;
         }
+        setcookie('user', $_SESSION['username'], time()+86400);
         fclose($filep);
         if(!$connexion){
           echo "Utilisateur ou mot de passe introuvable.";

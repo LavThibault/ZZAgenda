@@ -12,7 +12,8 @@
           <div class="form-group">
             <label class="col-12 control-label" for=""><?php echo $NOM ?></label>
             <div class="col-12">
-            <input id="" name="username" type="text" placeholder="" class="form-control input">
+
+            <input id="" name="username" type="text" placeholder="" class="form-control input" value="<?php if(isset($_COOKIE["user"])) echo $_COOKIE["user"]?>">
 
             </div>
           </div>
