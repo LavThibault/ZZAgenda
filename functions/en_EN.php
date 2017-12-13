@@ -2,7 +2,6 @@
 
 $DECONNEXION = 'Sign out';
 $ADMINISTRATION = 'Administration';
-$LIENADMIN = 'administrator';
 $CONNEXION = 'Sign in';
 $ACCUEIL = 'Home';
 $CARTE = 'Map';
