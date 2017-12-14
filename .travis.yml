@@ -7,4 +7,4 @@ before_script:
 
 script:
   - cd unit_test
-  - phpunit --debug *
+  - phpunit --debug test.php
