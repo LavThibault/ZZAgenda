@@ -1,10 +1,13 @@
 <?php
-  require_once('functions/conf_manager.php');
 
-  class Test extends PHPUnit_Framework_TestCase {
+  use PHPUnit\Framework\TestCase;
+
+
+
+  class Test extends TestCase {
 
     public function setUp(){
-        echo "before test";
+        require_once('functions/conf_manager.php');
     }
 
     public function test1(){
