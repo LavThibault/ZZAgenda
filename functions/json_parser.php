@@ -7,10 +7,15 @@
 
     $c_array = array();
 
-    if($all_c != NULL){
-      foreach ($all_c as $key => $c) {
+    $i = 0;
 
-        $c_array[$key]=$c;
+    if($all_c != NULL){
+      foreach ($all_c as $oldkey => $c) {
+        $nb = str_pad($i, 3, '0', STR_PAD_LEFT);
+        $newkey = substr($c->date, 6, 4).substr($c->date, 3, 2).substr($c->date, 0, 2).substr($c->heure, 0, 2).substr($c->heure, 3, 2).$nb;
+        $i = $i +1;
+
+        $c_array[$newkey]=$c;
 
       }
     }
