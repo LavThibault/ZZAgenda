@@ -13,7 +13,7 @@
 
       $c=$a+$b;
 
-      $this -> assertTrue($c == 2, "1+1=2");
+      $this -> assertTrue($c == 3, "1+1=2");
     }
 
     public function tearDown(){
