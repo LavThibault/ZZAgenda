@@ -2,6 +2,7 @@
 
 function authentification(){
     global $url;
+    sanitize();
     if (isset($_POST['username']) && isset($_POST['password']) && ($filep = fopen(__ROOT__."/database/password.csv", "r")) !== FALSE) {
         $connexion = false;
         $i = 1;
@@ -21,6 +22,11 @@ function authentification(){
           echo "Utilisateur ou mot de passe introuvable.";
         }
     }
+  }
+
+  function sanitize(){
+    $_POST['username'] = htmlentities($_POST['username']);
+    $_POST['password'] = htmlentities($_POST['password']);
   }
 
   function chiffrementDatabase(){
