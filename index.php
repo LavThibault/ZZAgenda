@@ -35,20 +35,18 @@
   extract($_SESSION);
 
 
-    if(isset($lang)){
-      if($lang == 'fr'){
-        require_once(__ROOT__.'/functions/fr_FR.php');
-      } else {
-        require_once(__ROOT__.'/functions/en_EN.php');
-      }
-    } else{
-      $lang = 'fr';
+  if(isset($lang)){
+    if($lang == 'fr'){
       require_once(__ROOT__.'/functions/fr_FR.php');
+    } else {
+      require_once(__ROOT__.'/functions/en_EN.php');
     }
+  } else{
+    $lang = 'fr';
+    require_once(__ROOT__.'/functions/fr_FR.php');
+  }
 
   chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
-
-
 
  ?>
 
