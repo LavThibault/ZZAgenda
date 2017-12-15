@@ -8,8 +8,8 @@
       public $lieu = "";
    }
 
-
    function add_conference(){
+
      $c_array = get_conferences();
 
      $nb_c = count($c_array);
@@ -26,12 +26,14 @@
    }
 
    function get_conference($key){
+
      $c_array = get_conferences();
 
      return $c_array[$key];
    }
 
    function update_conference($oldkey){
+
      $c = create_new_conference();
 
      $c_array=get_conferences();
@@ -50,6 +52,7 @@
    }
 
    function delete_conference($key){
+
       $c_array=get_conferences();
 
       unset($c_array[$key]);
@@ -58,6 +61,7 @@
    }
 
    function print_all_conference(){
+
      $c_array = get_conferences();
      $date="";
 
@@ -68,6 +72,7 @@
    }
 
    function print_all_conference_admin($url){
+
      $c_array = get_conferences();
 
      foreach ($c_array as $key => $c) {

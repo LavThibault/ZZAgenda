@@ -47,7 +47,6 @@
   }
 
   chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
-
  ?>
 
 <!DOCTYPE html>
