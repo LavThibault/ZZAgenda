@@ -73,7 +73,7 @@
                 <label class="col-md-4 control-label" for="dis"><?php echo $HEURE ?></label>
                 <div class="col-md-4 row">
                   <select id="heures" name="heures" class="form-control col-md-3">
-                    <option selected value="<?php substr($c->heure,0,2) ?>"><?php echo substr($c->heure,0,2) ?></option>
+                    <option selected value="<?php echo substr($c->heure,0,2) ?>"><?php echo substr($c->heure,0,2) ?></option>
                     <option value="00">00</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
