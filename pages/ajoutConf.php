@@ -40,7 +40,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="submit"><?php echo $DESCRIPTION ?></label>
                 <div class="col-md-4">
-                  <textarea class="form-control" id="desc" name="desc" required></textarea>
+                  <textarea class="form-control" type="textarea" id="desc" name="desc"></textarea>
                 </div>
               </div>
 
@@ -119,7 +119,7 @@
 
             </fieldset>
           </form>
-            </div>
+        </div>
           <?php
 
           if(isset($_POST['submit'])){

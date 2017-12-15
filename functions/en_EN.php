@@ -1,13 +1,7 @@
 <?php
 
 $DECONNEXION = 'Sign out';
-<<<<<<< HEAD
 $ADMINISTRATION = 'Administration';
-=======
-$LIEN_CONNEXION = 'connexion';
-$LIEN_DECONNEXION = 'connexion';
-$LIENADMIN = 'administrator';
->>>>>>> finalisationConf
 $CONNEXION = 'Sign in';
 $ACCUEIL = 'Home';
 $CARTE = 'Map';
