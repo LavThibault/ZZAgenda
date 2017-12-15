@@ -101,7 +101,7 @@
                   </select>
 
                   <select id="minutes" name="minutes" class="form-control col-md-3">
-                    <option selected value="<?php substr($c->heure,3,2) ?>"><?php echo substr($c->heure,3,2) ?></option>
+                    <option selected value="<?php echo substr($c->heure,3,2) ?>"><?php echo substr($c->heure,3,2) ?></option>
                     <option value="00">00</option>
                     <option value="05">05</option>
                     <option value="10">10</option>
