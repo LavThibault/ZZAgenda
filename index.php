@@ -82,7 +82,7 @@
 
           $unknown = array('connexion');
           $user = array('connexion', 'conferences', 'deconnexion');
-          $admin = array('admin', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion');
+          $admin = array('admin', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion', 'suppression');
 
 
           if (empty($page)) {

@@ -78,7 +78,7 @@
 
    function print_conference($c,$previous_date){
 
-     if($previous_date != $c->date){
+     if($previous_date == NULL || $previous_date != $c->date){
        echo "<div class=\"container\">
          <div class=\"row\">
            <div>
@@ -160,7 +160,7 @@
               <i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"load_page('"; echo $url."/index.php?lang=".$_GET['lang']."&page=modifierConf&conf=".$key; echo"')\" style=\"cursor:pointer;\"></i>
             </div>
             <div class=\"col-4\">
-              <i id=\"deleteConf\" class=\"fa fa-times\" aria-hidden=\"true\" href=\"delete_conference("; echo $key; echo")\" style=\"cursor:pointer;\"></i>
+              <i id=\"deleteConf\" class=\"fa fa-times\" aria-hidden=\"true\" onclick=\"load_page('"; echo $url."/index.php?lang=".$_GET['lang']."&page=suppression&conf=".$key; echo"')\" style=\"cursor:pointer;\"></i>
             </div>
           </div>
         </td>

@@ -26,5 +26,6 @@ $MOT_DE_PASSE = 'Password';
 $NOM = 'Name';
 $ANNULER = 'Cancel';
 $MODIFIER_UNE_CONFERENCE = 'Modify a conference';
+$CONFIRMER_LA_SUPPRESSION = 'Confirm this conference deletion';
 
  ?>
