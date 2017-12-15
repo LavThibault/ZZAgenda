@@ -16,7 +16,7 @@
         $_POST['minutes']="30";
     }
 
-    public function inserer_une_conference(){
+    public function test_inserer_une_conference(){
       add_conference();
 
       $c_array = get_conferences();
