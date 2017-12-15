@@ -1,7 +1,13 @@
 <?php
 
 $DECONNEXION = 'Sign out';
+<<<<<<< HEAD
 $ADMINISTRATION = 'Administration';
+=======
+$LIEN_CONNEXION = 'connexion';
+$LIEN_DECONNEXION = 'connexion';
+$LIENADMIN = 'administrator';
+>>>>>>> finalisationConf
 $CONNEXION = 'Sign in';
 $ACCUEIL = 'Home';
 $CARTE = 'Map';
@@ -24,5 +30,6 @@ $MOT_DE_PASSE = 'Password';
 $NOM = 'Name';
 $ANNULER = 'Cancel';
 $MODIFIER_UNE_CONFERENCE = 'Modify a conference';
+$CONFIRMER_LA_SUPPRESSION = 'Confirm this conference deletion';
 
  ?>

@@ -37,8 +37,14 @@
 <footer>
   <div class="container-fluid">
     <div class="row justify-content-around">
+<<<<<<< HEAD
       <?php accueilButton() ?>
       <?php adminButton() ?>
+=======
+
+      <a type="button" class="btn btn-primary col-3" href="<?php echo $url ?>/index.php?lang=<?php echo $lang ?>"><?php echo $ACCUEIL ?></a>
+      <a type="button" class="btn btn-primary col-3"><?php echo $CARTE ?></a>
+>>>>>>> finalisationConf
       <?php buttonConnexion() ?>
 
     </div>

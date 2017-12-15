@@ -24,7 +24,7 @@ $MOT_DE_PASSE = 'Mot de passe';
 $NOM = 'Nom';
 $ANNULER = 'Annuler';
 $MODIFIER_UNE_CONFERENCE = 'Modifier une conférence';
-
+$CONFIRMER_LA_SUPPRESSION = 'Confirmer la suppression de cette conférence';
 
 
  ?>
