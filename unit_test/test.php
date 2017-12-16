@@ -5,13 +5,15 @@
 
     public function setUp(){
         echo "=================================================================== DEBUT DES TESTS";
-
-        require_once(dirname(dirname(__FILE__)).'/functions/file.php');
-        require_once(dirname(dirname(__FILE__)).'/functions/json_parser.php');
-        require_once(dirname(dirname(__FILE__)).'/functions/conf_manager.php');
-        require_once(dirname(dirname(__FILE__)).'/functions/functions.php');
-        require_once(dirname(dirname(__FILE__)).'/functions/auth.php');
-        require_once(dirname(dirname(__FILE__)).'/functions/csv_parser.php');
+        if(!defined(__ROOT__)){
+          define('__ROOT__', dirname(dirname(__FILE__)));
+        }
+        require_once(__ROOT__.'/functions/file.php');
+        require_once(__ROOT__.'/functions/json_parser.php');
+        require_once(__ROOT__.'/functions/conf_manager.php');
+        require_once(__ROOT__.'/functions/functions.php');
+        require_once(__ROOT__.'/functions/auth.php');
+        require_once(__ROOT__.'/functions/csv_parser.php');
         $_POST['titre']="Internet Of Things";
         $_POST['interv']="Paul Pinault";
         $_POST['desc']="Introduction à la notion d'IOT et à ses problématiques";
