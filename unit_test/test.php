@@ -5,7 +5,7 @@
 
     public function setUp(){
         echo "=================================================================== DEBUT DES TESTS";
-        if(null !== __ROOT__)){
+        if(null !== __ROOT__){
           define('__ROOT__', dirname(dirname(__FILE__)));
         }
         require_once(__ROOT__.'/functions/file.php');
