@@ -39,6 +39,21 @@
 
     }
 
+    public function test_supprimer_une_conference(){
+      $c_array = get_conferences();
+
+      $nb_c_before = count($c_array);
+
+      delete_conference(key($c_array));
+
+      $c_array = get_conferences();
+
+      $nb_c_after = count($c_array);
+
+      $this -> assertEquals($nb_c_before - 1, $nb_c_after);
+
+    }
+
     public function tearDown(){
       echo "=================================================================== FIN DES TESTS ";
     }
