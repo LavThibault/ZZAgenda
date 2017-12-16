@@ -29,7 +29,9 @@
 
       $c = get_conference('201804171330000')
 
-      $this -> assertTrue($c->titre == 'Internet Of Things', "Valeur du titre -> ".$c->titre);
+      $this -> assertTrue($c->titre == 'Internet Of Things', "Valeur du titre");
+
+      echo $c->titre;
 
       foreach ($c_array as $key => $c) {
         delete_conference($key);
