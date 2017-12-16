@@ -6,7 +6,7 @@
     public function setUp(){
         echo "=================================================================== DEBUT DES TESTS";
         define('__ROOT__', dirname(dirname(__FILE__)));
-        global $file = "/database/conf_unit_test.json";
+
         require_once(__ROOT__.'/functions/file.php');
         require_once(__ROOT__.'/functions/json_parser.php');
         require_once(__ROOT__.'/functions/conf_manager.php');
@@ -20,7 +20,7 @@
         $_POST['date']="17/04/2018";
         $_POST['heures']="13";
         $_POST['minutes']="30";
-
+        $file = "/database/conf_unit_test.json";
     }
 
     public function test_inserer_une_conference(){
