@@ -27,9 +27,9 @@
 
       $c_array = get_conferences();
 
-      $nb_c = count($c_array);
+      $c = get_conference('201804171330000')
 
-      $this -> assertTrue($nb_c == 1, "Il n'y a qu'une conférence dans le fichier");
+      $this -> assertTrue($c->titre == 'Internet Of Things', "Valeur du titre -> ".$c->titre);
 
       foreach ($c_array as $key => $c) {
         delete_conference($key);
