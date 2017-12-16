@@ -22,10 +22,7 @@
         $_POST['minutes']="30";
         $file = "/database/conf_unit_test.json";
         $c_array = get_conferences();
-
-        foreach ($c_array as $key => $c) {
-          delete_conference($key);
-        }
+        $nb_c_before = count($c_array);
     }
 
     public function test_inserer_une_conference(){
@@ -33,14 +30,9 @@
 
       $c_array = get_conferences();
 
-      var_dump($c_array);
+      $nb_c_after = count($c_array);
 
-      foreach ($c_array as $key => $c) {
-        $this -> assertEquals($c->titre, 'Internet Of Things');
-      }
-
-      echo $c->titre;
-
+      $this -> assertEquals($nb_c_before + 1, $nb_c_after);
 
     }
 
