@@ -24,15 +24,13 @@
     }
 
     public function test_inserer_une_conference(){
-      $key = "201804171330000";
-
       add_conference();
 
       $c_array = get_conferences();
 
-      $c = get_conference($key);
-
-      $this -> assertEquals($c->titre, 'Internet Of Things');
+      foreach ($c_array as $key => $c) {
+        $this -> assertEquals($c->titre, 'Internet Of Things');
+      }
 
       echo $c->titre;
 
