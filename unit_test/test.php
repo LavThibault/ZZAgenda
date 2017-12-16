@@ -21,6 +21,11 @@
         $_POST['heures']="13";
         $_POST['minutes']="30";
         $file = "/database/conf_unit_test.json";
+        $c_array = get_conferences();
+
+        foreach ($c_array as $key => $c) {
+          delete_conference($key);
+        }
     }
 
     public function test_inserer_une_conference(){
@@ -34,9 +39,7 @@
 
       echo $c->titre;
 
-      foreach ($c_array as $key => $c) {
-        delete_conference($key);
-      }
+
     }
 
     public function tearDown(){
