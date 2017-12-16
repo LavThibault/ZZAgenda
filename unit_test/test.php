@@ -33,6 +33,8 @@
 
       $c_array = get_conferences();
 
+      var_dump($c_array);
+
       foreach ($c_array as $key => $c) {
         $this -> assertEquals($c->titre, 'Internet Of Things');
       }
