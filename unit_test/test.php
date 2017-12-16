@@ -27,7 +27,7 @@
 
       $c_array = get_conferences();
 
-      $c = get_conference('201804171330000')
+      $c = get_conference('201804171330000');
 
       $this -> assertTrue($c->titre == 'Internet Of Things', "Valeur du titre");
 
