@@ -5,8 +5,9 @@
 
     public function setUp(){
         echo "=================================================================== DEBUT DES TESTS";
-        define('__ROOT__', dirname(dirname(__FILE__)));
-
+        if(!isset(__ROOT__)){
+          define('__ROOT__', dirname(dirname(__FILE__)));
+        }
         require_once(__ROOT__.'/functions/file.php');
         require_once(__ROOT__.'/functions/json_parser.php');
         require_once(__ROOT__.'/functions/conf_manager.php');
