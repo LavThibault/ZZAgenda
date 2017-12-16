@@ -20,6 +20,7 @@
         $_POST['date']="17/04/2018";
         $_POST['heures']="13";
         $_POST['minutes']="30";
+        $key = "201804171330000";
     }
 
     public function test_inserer_une_conference(){
@@ -27,9 +28,9 @@
 
       $c_array = get_conferences();
 
-      $c = get_conference('201804171330000');
+      $c = get_conference($key);
 
-      $this -> assertTrue($c->titre == 'Internet Of Things', "Valeur du titre");
+      $this -> assertEquals($c->titre, 'Internet Of Things');
 
       echo $c->titre;
 
