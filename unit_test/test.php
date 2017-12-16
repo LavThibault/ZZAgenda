@@ -6,7 +6,7 @@
     public function setUp(){
         echo "=================================================================== DEBUT DES TESTS";
         define('__ROOT__', dirname(dirname(__FILE__)));
-        $file = "/database/conf_unit_test.json";
+        global $file = "/database/conf_unit_test.json";
         require_once(__ROOT__.'/functions/file.php');
         require_once(__ROOT__.'/functions/json_parser.php');
         require_once(__ROOT__.'/functions/conf_manager.php');
