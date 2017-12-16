@@ -21,11 +21,14 @@
         $_POST['heures']="13";
         $_POST['minutes']="30";
         $file = "/database/conf_unit_test.json";
-        $c_array = get_conferences();
-        $nb_c_before = count($c_array);
+
     }
 
     public function test_inserer_une_conference(){
+      $c_array = get_conferences();
+
+      $nb_c_before = count($c_array);
+
       add_conference();
 
       $c_array = get_conferences();
