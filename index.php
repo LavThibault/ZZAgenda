@@ -82,7 +82,7 @@
     /* Array containing allowed pages based on users level */
     $unknown = array('connexion');
     $user = array('connexion', 'conferences', 'deconnexion');
-    $admin = array('admin', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion', 'suppression');
+    $admin = array('admin', 'adminUser', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion', 'suppression');
 
     /* Define the page to load depending on previously defined parameters */
     if (empty($page)) { //if no page is requested (default page)
