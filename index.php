@@ -25,6 +25,7 @@
   require_once(__ROOT__.'/functions/conf_manager.php');
   require_once(__ROOT__.'/functions/auth.php');
   require_once(__ROOT__.'/functions/csv_parser.php');
+  require_once(__ROOT__.'/functions/user_manager.php');
 
 
   /* Allows to call $var instead of $_POST['var'] or $_GET['var'] */
@@ -117,7 +118,6 @@
         $page = 'pages/error/404.php'; //Unknown page
       }
     }
-
     include($page); //Load page content
 
     ?>
