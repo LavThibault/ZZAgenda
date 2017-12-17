@@ -1,5 +1,6 @@
 <?php
 
+  /* Function which gets all the users in the database and return them in an Array */
   function get_users(){
     $fichier = fopen(__ROOT__.'/database/password.csv', 'r');
     $userList = array();
@@ -8,7 +9,8 @@
     }
     return $userList;
   }
-
+  
+  /* Function which saves all the users in the database */
   function set_users($array){
     $csv_parsed = "";
     foreach($array as $l){

@@ -3,6 +3,7 @@
 
       <div>
         <?php
+          /* displays the username in top of the header */
           if(isset($_SESSION['username'])){
             echo "<p>Connecté(e) en tant que : ".$_SESSION['username']."</p>";
           }
