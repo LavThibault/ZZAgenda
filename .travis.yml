@@ -10,3 +10,4 @@ script:
   - phpunit --debug test_insertion.php
   - phpunit --debug test_suppression.php
   - phpunit --debug test_user_management.php
+  - phpunit --debug test_chiffrement_database.php
