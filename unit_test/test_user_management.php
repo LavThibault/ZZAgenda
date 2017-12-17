@@ -22,9 +22,7 @@
       $this -> assertEquals(groupToNumber('user'),1);
       $this -> assertEquals(groupToNumber('admin'),2);
       $this -> assertEquals(groupToNumber('visiazeazerr'),0);
-    }
 
-    public function test_recuperation_users(){
       $array = get_users();
       $this -> assertEquals($array[1][0], 'admin');
     }
