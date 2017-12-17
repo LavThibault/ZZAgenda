@@ -1,5 +1,6 @@
 <?php
 
+  /* Return an array containing all conferences */
   function get_conferences(){
     $all_c_parsed = read(__ROOT__."/database/conf.json");
 
@@ -23,6 +24,7 @@
     return $c_array;
   }
 
+  /* Save all conferences from an array after sorting them by key */
   function set_conference($c_array){
     ksort($c_array);
 

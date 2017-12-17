@@ -1,4 +1,5 @@
 <?php
+/* File with French translations */
 
 $DECONNEXION = 'Deconnexion';
 $ADMINISTRATION = 'Administration';

@@ -1,4 +1,5 @@
 <?php
+  /* Conference object used to store in JSON format */
    class Conference {
       public $titre = "";
       public $intervenant  = "";
@@ -8,6 +9,7 @@
       public $lieu = "";
    }
 
+   /* Add one new conference in the database */
    function add_conference(){
 
      $c_array = get_conferences();
@@ -18,6 +20,7 @@
      $c = create_new_conference();
 
      extract($_POST);
+     /* Keys format YYYYMMDDHHMMXXX where XXX is the unique id of the conference */
      $key = substr($date, 6, 4).substr($date, 3, 2).substr($date, 0, 2).$heures.$minutes.$nb_c;
 
      $c_array[$key]=$c;
@@ -25,6 +28,7 @@
      set_conference($c_array);
    }
 
+   /* Return one specific conference by giving his key */
    function get_conference($key){
 
      $c_array = get_conferences();
@@ -32,6 +36,7 @@
      return $c_array[$key];
    }
 
+   /* Replace the conference with $oldkey by a new conference containing updated values and a new key */
    function update_conference($oldkey){
 
      $c = create_new_conference();
@@ -51,6 +56,7 @@
      set_conference($c_array);
    }
 
+   /* Delete a specific conference */
    function delete_conference($key){
 
       $c_array=get_conferences();
@@ -60,6 +66,7 @@
       set_conference($c_array);
    }
 
+   /* Show all conferences contained in database */
    function print_all_conference(){
 
      $c_array = get_conferences();
@@ -71,6 +78,7 @@
 
    }
 
+   /* Show a summary of all conferences contained in database for administrator use */
    function print_all_conference_admin($url){
 
      $c_array = get_conferences();
@@ -81,8 +89,10 @@
 
    }
 
+   /* Show one conference with specific format */
    function print_conference($c,$previous_date){
 
+     /* $previous_date allow to show the same date once for many conferences */
      if($previous_date == NULL || $previous_date != $c->date){
        echo "<div class=\"container\">
          <div class=\"row\">
@@ -145,6 +155,7 @@
      return $previous_date;
    }
 
+   /* Show a summary of a specific conference with link for updating of deleting it */
    function print_conference_admin($c, $key, $url){
      echo"<tr>
             <td>";
@@ -172,6 +183,7 @@
      </tr>";
    }
 
+   /* Create a new object conference with all values contained in $_POST */
    function create_new_conference(){
      extract($_POST);
      $c = new Conference();
