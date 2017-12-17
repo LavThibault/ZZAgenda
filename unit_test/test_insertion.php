@@ -5,9 +5,7 @@
 
     public function setUp(){
         echo "=================================================================== DEBUT DES TESTS";
-        if(!defined(__ROOT__)){
-          define('__ROOT__', dirname(dirname(__FILE__)));
-        }
+        define('__ROOT__', dirname(dirname(__FILE__)));
         require_once(__ROOT__.'/functions/file.php');
         require_once(__ROOT__.'/functions/json_parser.php');
         require_once(__ROOT__.'/functions/conf_manager.php');
@@ -37,21 +35,6 @@
       $nb_c_after = count($c_array);
 
       $this -> assertEquals($nb_c_before + 1, $nb_c_after);
-
-    }
-
-    public function test_supprimer_une_conference(){
-      $c_array = get_conferences();
-
-      $nb_c_before = count($c_array);
-
-      delete_conference(key($c_array));
-
-      $c_array = get_conferences();
-
-      $nb_c_after = count($c_array);
-
-      $this -> assertEquals($nb_c_before - 1, $nb_c_after);
 
     }
 

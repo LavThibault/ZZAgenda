@@ -1,12 +1,7 @@
 <?php
 
   function get_conferences(){
-    global $file;
-    if(!isset($file)){
-      $all_c_parsed = read(__ROOT__."/database/conf.json");
-    } else {
-      $all_c_parsed = read(__ROOT__.$file);
-    }
+    $all_c_parsed = read(__ROOT__."/database/conf.json");
 
     $all_c = json_decode($all_c_parsed);
 
