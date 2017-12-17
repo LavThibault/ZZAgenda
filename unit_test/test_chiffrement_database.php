@@ -11,30 +11,15 @@
         require_once(__ROOT__.'/functions/conf_manager.php');
         require_once(__ROOT__.'/functions/auth.php');
         require_once(__ROOT__.'/functions/csv_parser.php');
-        $_POST['titre']="Internet Of Things";
-        $_POST['interv']="Paul Pinault";
-        $_POST['desc']="Introduction à la notion d'IOT et à ses problématiques";
-        $_POST['lieu']="Clermont-Ferrand";
-        $_POST['date']="17/04/2018";
-        $_POST['heures']="13";
-        $_POST['minutes']="30";
-        $file = "/database/conf_unit_test.json";
+        require_once(__ROOT__.'/functions/user_manager.php');
 
     }
 
-    public function test_inserer_une_conference(){
-      $c_array = get_conferences();
+    public function test_chiffrement_data_base(){
 
-      $nb_c_before = count($c_array);
-
-      add_conference();
-
-      $c_array = get_conferences();
-
-      $nb_c_after = count($c_array);
-
-      $this -> assertEquals($nb_c_before + 1, $nb_c_after);
-
+      $array = get_users();
+      chiffrementDatabase();
+      $this -> assertEquals($array[1][1], hash('sha256','admin'));
     }
 
     public function tearDown(){
