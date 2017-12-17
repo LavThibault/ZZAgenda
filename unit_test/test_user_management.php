@@ -14,7 +14,7 @@
 
     }
 
-    public function conversion_nombre_groupe(){
+    public function test_conversion_nombre_groupe(){
       $this -> assertEquals(numberToGroup(1),'user');
       $this -> assertEquals(numberToGroup(2),'admin');
       $this -> assertEquals(numberToGroup(-300),'visitor');
