@@ -24,6 +24,11 @@
       $this -> assertEquals(groupToNumber('visiazeazerr'),0);
     }
 
+    public function test_recuperation_users(){
+      $array = get_users();
+      this -> assertEquals($array[1][0], 'admin');
+    }
+
     public function tearDown(){
       echo "=================================================================== FIN DES TESTS ";
     }
