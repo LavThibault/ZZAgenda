@@ -1,4 +1,5 @@
 <?php
+/* File with English translations */
 
 $DECONNEXION = 'Sign out';
 $ADMINISTRATION = 'Administration';

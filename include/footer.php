@@ -1,4 +1,5 @@
 <?php
+  /* Function which returns a boolean if the user is registered */
   function isConnected(){
     $connected = FALSE;
     if($_SESSION['level']>0){
@@ -7,6 +8,7 @@
     return $connected;
   }
 
+  /* Function which displays the home button */
   function accueilButton(){
     global $url, $lang, $ACCUEIL;
     if(isConnected()){
@@ -17,6 +19,7 @@
     }
   }
 
+  /* Function which displays the connexion button */
   function buttonConnexion(){
     global $url, $lang, $CONNEXION, $DECONNEXION;
     if(isConnected()){
@@ -26,6 +29,8 @@
       echo '<a type="button" class="btn btn-primary col-3" href="'.$url.'/index.php?lang='.$lang.'&page=connexion">'.$CONNEXION.'</a>';
     }
   }
+
+  /* Function which displays the administration button */
   function adminButton(){
     if($_SESSION['level'] == 2){
       global $url, $lang, $ADMINISTRATION;

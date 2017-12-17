@@ -3,6 +3,7 @@
 
       <div>
         <?php
+          /* displays the username in top of the header */
           if(isset($_SESSION['username'])){
             echo "<p>Connecté(e) en tant que : ".$_SESSION['username']."</p>";
           }
@@ -16,6 +17,7 @@
     <form class="form-inline my-2 my-lg-0">
           <select id="language" name="language" class="form-control mr-sm-2" onChange="window.location.href=this.value">
             <?php
+            /* Show the active language first */
                 if($lang == "en"){
             ?>
               <option value="<?php echo $url ?>/index.php?lang=en<?php if(isset($page)){ echo "&page=".$page;} if(isset($conf)){ echo "&conf=".$conf;} ?>"><?php echo $ANGLAIS ?></option>

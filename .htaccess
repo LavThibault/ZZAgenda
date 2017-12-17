@@ -1,3 +1,4 @@
+#Exemple of rules that can be used in htaccess but not used on etud
 #Options +FollowSymLinks
 #RewriteEngine On
 
