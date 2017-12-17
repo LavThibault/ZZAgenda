@@ -48,7 +48,6 @@
   }
 
   chiffrementDatabase(); //Hash les passwords seulement si ils n'ont pas été chiffrés
-
  ?>
 
 <!DOCTYPE html>
@@ -66,6 +65,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://use.fontawesome.com/ef7e0d3fcd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
     <title>ZZAgenda</title>
   </head>
   <body>
@@ -81,7 +82,7 @@
 
           $unknown = array('connexion');
           $user = array('connexion', 'conferences', 'deconnexion');
-          $admin = array('admin', 'adminUser', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion');
+          $admin = array('admin', 'adminUser', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion', 'suppression');
 
 
           if (empty($page)) {

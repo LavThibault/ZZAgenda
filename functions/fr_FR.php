@@ -29,7 +29,7 @@ $ANNULER = 'Annuler';
 $MODIFIER_UNE_CONFERENCE = 'Modifier une conférence';
 $USERNAME = 'Nom d\'utilisateur';
 $GROUPE = 'Groupe';
-
+$CONFIRMER_LA_SUPPRESSION = 'Confirmer la suppression de cette conférence';
 
 
  ?>

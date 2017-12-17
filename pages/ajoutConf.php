@@ -40,7 +40,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="submit"><?php echo $DESCRIPTION ?></label>
                 <div class="col-md-4">
-                  <textarea class="form-control" id="desc" name="desc" required></textarea>
+                  <textarea class="form-control" type="textarea" id="desc" name="desc"></textarea>
                 </div>
               </div>
 
@@ -119,13 +119,18 @@
 
             </fieldset>
           </form>
-            </div>
+        </div>
           <?php
 
           if(isset($_POST['submit'])){
             if(checkdate(substr($_POST['date'], 3, 2),substr($_POST['date'], 0, 2),substr($_POST['date'], 6, 4))){
 
               add_conference();
+              ?>
+                <script type="text/javascript">
+                  load_page("<?php echo $url ?>/index.php?lang=<?php echo $lang ?>&page=admin");
+                </script>
+              <?php
 
             } else {
               ?>

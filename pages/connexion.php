@@ -3,26 +3,26 @@
 
     <div class="container">
       <div class="row justify-content-center">
-        <form class="form-horizontal col-5" method="post" >
+        <form class="form-horizontal col-5" method="post">
           <fieldset>
           <!-- Form Name -->
           <legend><?php echo $CONNEXION ?></legend>
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-12 control-label" for=""><?php echo $NOM ?></label>
+            <label class="col-12 control-label"><?php echo $NOM ?></label>
             <div class="col-12">
 
-            <input id="" name="username" type="text" placeholder="" class="form-control input" value="<?php if(isset($_COOKIE["user"])) echo $_COOKIE["user"]?>">
+            <input name="username" type="text" class="form-control input" value="<?php if(isset($_COOKIE["user"])) echo $_COOKIE["user"]?>" required>
 
             </div>
           </div>
 
           <!-- Password input-->
           <div class="form-group">
-            <label class="col-12 control-label" for=""><?php echo $MOT_DE_PASSE ?></label>
+            <label class="col-12 control-label"><?php echo $MOT_DE_PASSE ?></label>
             <div class="col-12">
-              <input id="" name="password" type="password" placeholder="" class="form-control input">
+              <input name="password" type="password" class="form-control input" required>
 
             </div>
           </div>

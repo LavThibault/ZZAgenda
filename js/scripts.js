@@ -1,3 +1,3 @@
-function modify_conference(key){
-  window.location = '/ZZAgenda/fr/modifier_conference/' + key
+function load_page(url){
+  window.location = url
 }

@@ -8,8 +8,8 @@
       public $lieu = "";
    }
 
-
    function add_conference(){
+
      $c_array = get_conferences();
 
      $nb_c = count($c_array);
@@ -26,12 +26,14 @@
    }
 
    function get_conference($key){
+
      $c_array = get_conferences();
 
      return $c_array[$key];
    }
 
    function update_conference($oldkey){
+
      $c = create_new_conference();
 
      $c_array=get_conferences();
@@ -49,7 +51,17 @@
      set_conference($c_array);
    }
 
+   function delete_conference($key){
+
+      $c_array=get_conferences();
+
+      unset($c_array[$key]);
+
+      set_conference($c_array);
+   }
+
    function print_all_conference(){
+
      $c_array = get_conferences();
      $date="";
 
@@ -59,18 +71,19 @@
 
    }
 
-   function print_all_conference_admin(){
+   function print_all_conference_admin($url){
+
      $c_array = get_conferences();
 
      foreach ($c_array as $key => $c) {
-       print_conference_admin($c, $key);
+       print_conference_admin($c, $key,$url);
      }
 
    }
 
    function print_conference($c,$previous_date){
 
-     if($previous_date != $c->date){
+     if($previous_date == NULL || $previous_date != $c->date){
        echo "<div class=\"container\">
          <div class=\"row\">
            <div>
@@ -132,7 +145,7 @@
      return $previous_date;
    }
 
-   function print_conference_admin($c, $key){
+   function print_conference_admin($c, $key, $url){
      echo"<tr>
             <td>";
               echo $c->titre;
@@ -149,10 +162,10 @@
        <td>
           <div class=\"row\">
             <div class=\"col-4\">
-              <i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"modify_conference("; echo $key; echo")\" style=\"cursor:pointer;\"></i>
+              <i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"load_page('"; echo $url."/index.php?lang=".$_GET['lang']."&page=modifierConf&conf=".$key; echo"')\" style=\"cursor:pointer;\"></i>
             </div>
             <div class=\"col-4\">
-              <i class=\"fa fa-times\" aria-hidden=\"true\"></i>
+              <i id=\"deleteConf\" class=\"fa fa-times\" aria-hidden=\"true\" onclick=\"load_page('"; echo $url."/index.php?lang=".$_GET['lang']."&page=suppression&conf=".$key; echo"')\" style=\"cursor:pointer;\"></i>
             </div>
           </div>
         </td>

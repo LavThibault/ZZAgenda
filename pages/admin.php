@@ -36,7 +36,7 @@
         <tbody>
           <?php
 
-            print_all_conference_admin();
+            print_all_conference_admin($url);
 
            ?>
         </tbody>

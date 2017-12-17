@@ -73,6 +73,7 @@
                 <label class="col-md-4 control-label" for="dis"><?php echo $HEURE ?></label>
                 <div class="col-md-4 row">
                   <select id="heures" name="heures" class="form-control col-md-3">
+                    <option selected value="<?php echo substr($c->heure,0,2) ?>"><?php echo substr($c->heure,0,2) ?></option>
                     <option value="00">00</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -100,6 +101,7 @@
                   </select>
 
                   <select id="minutes" name="minutes" class="form-control col-md-3">
+                    <option selected value="<?php echo substr($c->heure,3,2) ?>"><?php echo substr($c->heure,3,2) ?></option>
                     <option value="00">00</option>
                     <option value="05">05</option>
                     <option value="10">10</option>
@@ -134,7 +136,11 @@
             if(checkdate(substr($_POST['date'], 3, 2),substr($_POST['date'], 0, 2),substr($_POST['date'], 6, 4))){
 
               update_conference($conf);
-
+              ?>
+                <script type="text/javascript">
+                  load_page("<?php echo $url ?>/index.php?lang=<?php echo $lang ?>&page=admin");
+                </script>
+              <?php
             } else {
               ?>
 

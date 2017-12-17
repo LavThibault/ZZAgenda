@@ -29,5 +29,6 @@ $ANNULER = 'Cancel';
 $MODIFIER_UNE_CONFERENCE = 'Modify a conference';
 $USERNAME = 'Username';
 $GROUPE = 'Group';
+$CONFIRMER_LA_SUPPRESSION = 'Confirm this conference deletion';
 
  ?>
