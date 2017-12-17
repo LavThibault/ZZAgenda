@@ -7,4 +7,6 @@ before_script:
 
 script:
   - cd unit_test
-  - phpunit --debug test_*
+  - phpunit --debug test_insertion.php
+  - phpunit --debug test_suppression.php
+  - phpunit --debug test_user_management.php
