@@ -26,7 +26,7 @@
 
     public function test_recuperation_users(){
       $array = get_users();
-      this -> assertEquals($array[1][0], 'admin');
+      $this -> assertEquals($array[1][0], 'admin');
     }
 
     public function tearDown(){
