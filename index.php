@@ -35,13 +35,13 @@
   /* Load the correct language file */
   if(isset($lang)){
     if($lang == 'fr'){
-      require_once(__ROOT__.'/functions/fr_FR.php');
+      require_once(__ROOT__.'/include/fr_FR.php');
     } else {
-      require_once(__ROOT__.'/functions/en_EN.php');
+      require_once(__ROOT__.'/include/en_EN.php');
     }
   } else{
     $lang = 'fr';
-    require_once(__ROOT__.'/functions/fr_FR.php');
+    require_once(__ROOT__.'/include/fr_FR.php');
   }
 
   /* Hash passwords only if they're not already */
