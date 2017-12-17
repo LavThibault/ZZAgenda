@@ -1,5 +1,6 @@
 <?php
 
+/* Converts a number into its corresponding group name */
 function numberToGroup($number){
   switch ($number) {
     case 1:
@@ -17,6 +18,7 @@ function numberToGroup($number){
   return $g;
 }
 
+/* Converts a group name into its corresponding number */
 function groupToNumber($group){
   switch ($group) {
     case 'user':
@@ -34,6 +36,7 @@ function groupToNumber($group){
   return $g;
 }
 
+/* Display one user */
 function print_user_admin($user, $id){
   global $MODIFIER;
   echo"<tr>
@@ -55,6 +58,7 @@ function print_user_admin($user, $id){
   </tr>";
 }
 
+/* Display all the users registered in the database */
 function print_all_users_admin(){
   $all_users = get_users();
   $id = 1;
@@ -66,6 +70,7 @@ function print_all_users_admin(){
   }
 }
 
+/* Modify the level of a registered user */
 function modification(){
   if(!empty($_POST)){
     $array = get_users();
