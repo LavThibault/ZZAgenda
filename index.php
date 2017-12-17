@@ -25,9 +25,10 @@
   require_once(__ROOT__.'/functions/file.php');
   require_once(__ROOT__.'/functions/json_parser.php');
   require_once(__ROOT__.'/functions/conf_manager.php');
-  require_once(__ROOT__.'/functions/functions.php');
+  //require_once(__ROOT__.'/functions/functions.php');
   require_once(__ROOT__.'/functions/auth.php');
   require_once(__ROOT__.'/functions/csv_parser.php');
+  require_once(__ROOT__.'/functions/user_manager.php');
 
 
 
@@ -81,7 +82,7 @@
 
           $unknown = array('connexion');
           $user = array('connexion', 'conferences', 'deconnexion');
-          $admin = array('admin', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion', 'suppression');
+          $admin = array('admin', 'adminUser', 'ajoutConf', 'connexion', 'modifierConf', 'conferences', 'deconnexion', 'suppression');
 
 
           if (empty($page)) {
