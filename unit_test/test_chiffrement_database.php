@@ -19,7 +19,7 @@
 
       $array = get_users();
       chiffrementDatabase();
-      $this -> assertEquals($array[1][2], hash('sha256','admin'));
+      $this -> assertEquals($array[1][1], hash('sha256','admin'));
     }
 
     public function tearDown(){
